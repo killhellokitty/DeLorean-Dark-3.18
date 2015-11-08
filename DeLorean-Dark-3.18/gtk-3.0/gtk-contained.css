@@ -5999,21 +5999,21 @@ GtkInfoBar {
   color: @theme_fg_color;
   text-shadow: 0 -1px alpha(black,0.5);
   border-style: none; 
-  box-shadow: inset 0 1px alpha(white, 0.02)}
+  box-shadow: inset 0 1px alpha(white, 0.02);}
   
 .warning{
   background-color: #a75400;
   color: #eeeeee;
   text-shadow: 0 1px #6c3600;
   border-style: none; 
-  box-shadow: inset 0 1px alpha(white, 0.02)}
+  box-shadow: inset 0 1px alpha(white, 0.02);}
   
 .error {
   background-color: #a70000;
   color: #eeeeee;
   text-shadow: 0 1px #6c0000;
   border-style: none; 
-  box-shadow: inset 0 1px alpha(white, 0.02)}
+  box-shadow: inset 0 1px alpha(white, 0.02);}
   
   .info .button, .info .header-bar .button.titlebutton, .header-bar .info .button.titlebutton,
   .info .titlebar .button.titlebutton,
@@ -7440,6 +7440,1021 @@ GthAutoPaned GtkScrolledWindow GthFolderTree.view row:selected {
 GthFileList GtkScrolledWindow GthGridView:selected:focus {
 	background-color: @theme_selected_bg_color;
 	background-image: none;
+}
+
+/*
+ * Dconf Editor
+ */
+DConfWindow GtkTreeView.view,
+DConfWindow GtkTreeView.view:backdrop {
+    background-color: @theme_bg_color;
+}
+
+DConfWindow GtkTreeView.view row:selected,
+DConfWindow GtkTreeView.view row:selected:focus,
+DConfWindow GtkTreeView.view row:selected:backdrop,
+DConfWindow GtkTreeView.view row:selected:focus:backdrop {
+    background-image:  linear-gradient(to bottom,
+                                       rgba(15,15,16,0.35));
+    color: @theme_fg_color;
+    box-shadow: inset 0 -1px rgba(255,255,255,0.04),inset 0 1px rgba(0,0,0,0.15);
+}
+
+DConfWindow DConfKeyView.view,
+DConfWindow DConfKeyView.view:backdrop {
+    background-color: @theme_base_color;
+}
+
+DConfWindow DConfKeyView.view row:selected,
+DConfWindow DConfKeyView.view row:selected:hover,
+DConfWindow DConfKeyView.view row:selected:focus,
+DConfWindow DConfKeyView.view row:selected:backdrop,
+DConfWindow DConfKeyView.view row:selected:hover:backdrop,
+DConfWindow DConfKeyView.view row:selected:focus:backdrop {
+    background-image: linear-gradient(to bottom,
+                                      @theme_selected_bg_color);
+    color: @theme_selected_fg_color;
+}
+
+DConfWindow DConfKeyView.view row:hover {
+    background-image:  linear-gradient(to bottom,
+                                       shade(@theme_base_color,0.9));
+    color: #cdcdcf;
+}
+
+DConfWindow DConfKeyView.view row:hover:backdrop {
+    background-image:  none;
+    color: #cdcdcf;
+}
+
+/***********************************************************************
+ *              MATE GTK3                                              *
+ **********************************************************************/
+
+/*
+ * Caja
+ */
+CajaNavigationWindow .view,
+CajaNavigationWindow .view row,
+CajaNavigationWindow .view:backdrop,
+CajaNavigationWindow .view row:backdrop {
+    background-color: @theme_base_color;
+    
+}
+
+CajaNavigationWindow CajaSidePane CajaPlacesSidebar.frame,
+CajaNavigationWindow CajaNotebook .vertical .vertical FMIconView.frame {
+    border-color: @theme_bg_color;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
+}
+
+/* DOESN'T WORK! MOST OF THE TIME? */
+CajaNavigationWindow FMIconView .view,
+CajaNavigationWindow FMIconView .view .dim-label,
+CajaNavigationWindow FMIconContainer.view {
+  color: @theme_fg_color;
+}
+
+CajaDesktopWindow FMDesktopIconView .view {
+    background-color: transparent;
+    background-image: none;
+    
+}
+
+.caja-inactive-pane .view {
+	background-color: shade(@theme_bg_color, 0.9);
+}
+
+.caja-inactive-pane .notebook,
+.caja-inactive-pane .notebook tab.top:active,
+.caja-inactive-pane .notebook tab.top.active-page {
+	background-color: shade(@theme_bg_color, 0.9);
+}
+
+.caja-inactive-pane .notebook .scrollbar.button:insensitive,
+.caja-inactive-pane .notebook .scrollbar.button:insensitive:backdrop {
+	background-color: transparent;
+	border-radius: 0px;
+}
+
+CajaWindow GtkPaned.horizontal,
+CajaWindow GtkPaned.horizontal:backdrop {
+    -GtkPaned-handle-size: 3px;
+    border-color: transparent;
+    background-color: @theme_bg_color;
+}
+
+CajaWindow GtkScrolledWindow.frame {
+	border-style: none;
+	border-color: @theme_bg_color;
+}
+
+CajaView .expander column:sorted:selected,
+CajaView .expander column:sorted:selected:hover {
+	background-image: none;
+	background-color: transparent;
+}
+
+CajaWindow .floating-bar {
+	font: italic;
+}
+CajaWindow .notebook {
+	/*border-color: shade(@notebook_border, 1.2);*/
+	border-radius: 0px;
+}
+
+CajaWindow .notebook tab {
+	border-radius: 0px;
+}
+
+CajaNavigationWindow .horizontal .vertical .horizontal .vertical .horizontal CajaPathBar .button ,
+CajaNavigationWindow .horizontal .vertical .horizontal .vertical .horizontal .button.image-button {
+    padding: 6px;
+    border-color: #080809;
+}
+
+CajaNavigationWindow .toolbar.horizontal.primary-toolbar .vertical .button {
+        padding: 6px;
+}
+
+CajaSidePane GtkButton.button.flat,
+CajaSidePane GtkButton.button.flat:backdrop {
+    border-style: solid;
+    border-color: #080809;
+    border-radius: 3px;
+    padding: 6px 2px;
+    background-color: shade(@theme_bg_color, 0.9);
+}
+
+CajaSidePane GtkButton.button.flat:hover {
+    border-radius: 3px;
+    padding: 6px 2px;
+    background-color: shade(@theme_bg_color,1.2);
+    background-image: none;
+}
+
+CajaSidePane GtkButton.button.flat:hover:backdrop {
+    border-radius: 3px;
+    padding: 6px 2px;
+    background-color: shade(@theme_bg_color,0.9);
+    background-image: none;
+}
+
+CajaSidePane GtkToggleButton.button.flat,
+CajaSidePane GtkToggleButton.button.flat:hover  {
+    padding: 6px 5px;
+}
+
+/* caja sidebar */
+CajaWindow FMTreeView .view,
+CajaWindow CajaNotesViewer .view,
+CajaWindow CajaPlacesSidebar .view,
+CajaWindow CajaHistorySidebar .view,
+CajaWindow CajaInformationPanel GtkVBox,
+CajaWindow CajaEmblemSidebar GtkViewport,
+CajaWindow FMTreeView .view:backdrop,
+CajaWindow CajaNotesViewer .view:backdrop,
+CajaWindow CajaPlacesSidebar .view:backdrop,
+CajaWindow CajaHistorySidebar .view:backdrop,
+CajaWindow CajaInformationPanel GtkVBox:backdrop,
+CajaWindow CajaEmblemSidebar GtkViewport:backdrop {
+    background-color: @theme_bg_color;
+    border-width: 1px;
+    border-style: solid;
+    border-color: @theme_bg_color;
+}
+
+CajaWindow FMTreeView .scrollbar .trough,
+CajaWindow CajaNotesViewer .scrollbar .trough,
+CajaWindow CajaPlacesSidebar .scrollbar .trough,
+CajaWindow CajaHistorySidebar .scrollbar .trough,
+CajaWindow CajaEmblemSidebar .scrollbar .trough,
+CajaWindow FMTreeView .scrollbar .trough:backdrop,
+CajaWindow CajaNotesViewer .scrollbar .trough:backdrop,
+CajaWindow CajaPlacesSidebar .scrollbar .trough:backdrop,
+CajaWindow CajaHistorySidebar .scrollbar .trough:backdrop,
+CajaWindow CajaEmblemSidebar .scrollbar .trough:backdrop {
+    background-color: @theme_bg_color;
+    border: 1px solid @theme_bg_color; }
+
+CajaWindow FMTreeView .frame,
+CajaWindow CajaNotesViewer .frame,
+CajaWindow CajaPlacesSidebar .frame,
+CajaWindow CajaHistorySidebar .frame,
+CajaWindow CajaEmblemSidebar .frame,
+CajaWindow FMTreeView .frame:backdrop,
+CajaWindow CajaNotesViewer .frame:backdrop,
+CajaWindow CajaPlacesSidebar .frame:backdrop,
+CajaWindow CajaHistorySidebar .frame:backdrop,
+CajaWindow CajaEmblemSidebar .frame:backdrop {
+    border-width: 1px;
+    border-style: solid;
+    border-color: @theme_bg_color;
+}
+
+CajaWindow FMTreeView .scrollbar.button,
+CajaWindow CajaNotesViewer .scrollbar.button,
+CajaWindow CajaEmblemSidebar .scrollbar.button,
+CajaWindow CajaPlacesSidebar .scrollbar.button,
+CajaWindow CajaHistorySidebar .scrollbar.button,
+CajaWindow FMTreeView .scrollbar.button:backdrop,
+CajaWindow CajaNotesViewer .scrollbar.button:backdrop,
+CajaWindow CajaEmblemSidebar .scrollbar.button:backdrop,
+CajaWindow CajaPlacesSidebar .scrollbar.button:backdrop,
+CajaWindow CajaHistorySidebar .scrollbar.button:backdrop {
+    color: transparent;
+}
+
+CajaWindow FMTreeView .scrollbar.button:hover,
+CajaWindow CajaNotesViewer .scrollbar.button:hover,
+CajaWindow CajaEmblemSidebar .scrollbar.button:hover,
+CajaWindow CajaPlacesSidebar .scrollbar.button:hover,
+CajaWindow CajaHistorySidebar .scrollbar.button:hover,
+CajaWindow FMTreeView .scrollbar.button:hover:backdrop,
+CajaWindow CajaNotesViewer .scrollbar.button:hover:backdrop,
+CajaWindow CajaEmblemSidebar .scrollbar.button:hover:backdrop,
+CajaWindow CajaPlacesSidebar .scrollbar.button:hover:backdrop,
+CajaWindow CajaHistorySidebar .scrollbar.button:hover:backdrop {
+    color: @theme_fg_color;
+}
+
+CajaWindow FMTreeView .cell:selected,
+CajaWindow FMTreeView *.cell:selected,
+CajaPlacesSidebar .cell:selected,
+CajaPlacesSidebar *.cell:selected,
+CajaWindow CajaHistorySidebar .cell:selected,
+CajaWindow CajaHistorySidebar *.cell:selected {
+    box-shadow: inset 0 -1px alpha(white, 0.06), inset 0 1px alpha(black,0.8);
+}
+
+CajaWindow FMTreeView .cell:selected:focus,
+CajaWindow FMTreeView *.cell:selected:focus,
+CajaPlacesSidebar .cell:selected:focus,
+CajaPlacesSidebar *.cell:selected:focus,
+CajaWindow CajaHistorySidebar .cell:selected:focus,
+CajaWindow CajaHistorySidebar *.cell:selected:focus {
+    color: @theme_text_color;
+    box-shadow: inset 0 -1px alpha(white, 0.06), inset 0 1px alpha(black,0.8);
+}
+
+CajaWindow FMTreeView .cell.image:selected,
+CajaWindow FMTreeView .cell.image:selected:focus,
+CajaPlacesSidebar .cell.image:selected,
+CajaPlacesSidebar .cell.image:selected:focus,
+CajaWindow CajaHistorySidebar .cell.image:selected,
+CajaWindow CajaHistorySidebar .cell.image:selected:focus {
+    color: shade(@theme_selected_bg_color, 0.75);
+}
+
+CajaWindow FMTreeView .cell:selected:backdrop,
+CajaWindow FMTreeView *.cell:selected:backdrop,
+CajaPlacesSidebar .cell:selected:backdrop,
+CajaPlacesSidebar *.cell:selected:backdrop,
+CajaWindow CajaHistorySidebar .cell:selected:backdrop,
+CajaWindow CajaHistorySidebar *.cell:selected:backdrop,
+CajaWindow FMTreeView .cell:selected:focus:backdrop,
+CajaWindow FMTreeView *.cell:selected:focus:backdrop,
+CajaPlacesSidebar .cell:selected:focus:backdrop,
+CajaPlacesSidebar *.cell:selected:focus:backdrop,
+CajaWindow CajaHistorySidebar .cell:selected:focus:backdrop,
+CajaWindow CajaHistorySidebar *.cell:selected:focus:backdrop,
+CajaWindow FMTreeView .cell.image:selected:backdrop,
+CajaWindow FMTreeView .cell.image:selected:focus:backdrop,
+CajaPlacesSidebar .cell.image:selected:backdrop,
+CajaPlacesSidebar .cell.image:selected:focus:backdrop,
+CajaWindow CajaHistorySidebar .cell.image:selected:backdrop,
+CajaWindow CajaHistorySidebar .cell.image:selected:focus:backdrop {
+    box-shadow: none;
+}
+/*
+CajaWindow .question, 
+CajaWindow .info,
+CajaTrashBar.info,
+CajaXContentBar.info,
+CajaQueryEditor.info,
+CajaSearchBar.info {
+	background-color: @theme_bg_color;
+}
+
+CajaSearchBar.info {
+	border-radius: 0px;
+}*/
+CajaWindow GtkEventBox,
+CajaTrashBar {
+  background-color: shade(@theme_base_color, 1.8);
+  color: @theme_fg_color;
+  text-shadow: 0 -1px alpha(black,0.5);
+  border-style: none; 
+  box-shadow: inset 0 1px alpha(white, 0.02);}
+  
+CajaTrashBar .button {
+color: @theme_fg_color;
+    outline-color: rgba(255, 255, 255, 0.3);
+    border-style: solid;
+    border-color: #2c2c2e;
+  background-color: shade(@theme_base_color, 1.8);			
+  background-image: -gtk-gradient (radial, 
+										center -0.5, 0,
+										center -0.1, 1.0,
+										from(rgba(255,255,255,0.1)),
+										to(alpha(black, 0.04))),
+						linear-gradient(to bottom,
+                                      transparent,
+                                      alpha(@theme_selected_bg_color, 0.02) 
+                                      ),
+                        linear-gradient(to bottom, 
+                                      shade(shade(@theme_base_color, 1.8), 1.2), 
+                                      shade(shade(@theme_base_color, 1.8), 0.9)
+                                      );     
+  text-shadow: 0 -1px rgba(0,0,0,0.7);
+  icon-shadow: 0 -1px rgba(0,0,0,0.7);                                   
+  box-shadow: 0 1px alpha(white, 0.08) inset,
+				0 2px alpha(white, 0.04) inset,
+				1px 0 alpha(white, 0.03) inset,
+				-1px 0 alpha(white, 0.02) inset,
+				0 -1px alpha(white, 0.03) inset,
+				0 -2px alpha(black, 0.02) inset,
+				0 -3px alpha(black, 0.01) inset,
+				0 1px alpha(white,0.08); }
+				
+CajaTrashBar .button:hover {
+color: shade(@theme_fg_color, 1.2);
+      outline-color: rgba(255, 255, 255, 0.3);
+      border-color: #2c2c2e;
+    background-color: shade(shade(@theme_base_color, 1.8), 0.9);		
+	background-image: -gtk-gradient (radial, 
+										center -0.5, 0,
+										center -0.1, 1.0,
+										from(rgba(255,255,255,0.4)),
+										to(alpha(black, 0.06))),
+						linear-gradient(to bottom,
+                                      transparent,
+                                      alpha(@theme_selected_bg_color, 0.16)
+                                      ),
+                        linear-gradient(to bottom, 
+                                      shade(shade(shade(@theme_base_color, 1.8), 1.2), 0.98),
+                                      shade(shade(@theme_base_color, 1.8), 0.9)
+                                      );  
+       box-shadow: 0 1px alpha(white, 0.09) inset,
+				0 2px alpha(white, 0.015) inset,
+				1px 0 alpha(white, 0.045) inset,
+				-1px 0 alpha(white, 0.03) inset,
+				0 -1px alpha(white, 0.045) inset,
+				0 -2px alpha(black, 0.02) inset,
+				0 -3px alpha(black, 0.01) inset,
+				0 1px 2px 0 rgba(0,0,0,0.2); 
+    text-shadow: 0 1px rgba(0,0,0, 0.76923);
+    icon-shadow: 0 1px rgba(0,0,0, 0.76923); }
+    
+CajaTrashBar .button:active {
+color: white;
+      outline-color: rgba(255, 255, 255, 0.3);
+      border-color: #2c2c2e;
+    border-bottom-color: #323234;
+    background-image: linear-gradient(to bottom, 
+                                      mix(shade(shade(@theme_base_color, 1.8), 0.9), @theme_selected_bg_color, 0.30), 
+                                      mix(shade(shade(@theme_base_color, 1.8), 1.2), @theme_selected_bg_color, 0.25));
+    background-color: transparent;
+    text-shadow: 0 1px rgba(0,0,0, 0.76923);
+    icon-shadow: 0 1px rgba(0,0,0, 0.76923);
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.07), inset 0 2px 1px -2px rgba(0, 0, 0, 0.6), 0 1px alpha(white,0.12); }
+    
+CajaTrashBar .button:insensitive {
+color:alpha(white, 0.6);
+      border-style: solid;
+      border-color: #363639;
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.05));
+      text-shadow: none;
+      icon-shadow: none;
+      box-shadow:  none; }
+      
+CajaTrashBar .button:backdrop {
+color: alpha(white,0.4);
+      border-style: solid;
+      border-color: #39393c;
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.1));
+      text-shadow: none;
+      icon-shadow: none;
+      box-shadow: inset 0 1px rgba(255, 255, 255, 0);
+}
+      
+CajaTrashBar .button:backdrop:insensitive {
+        color: alpha(white,0.5);
+        border-style:solid;
+        border-color: #39393c;
+        background-image: linear-gradient(to bottom, rgba(0,0,0,0.4));
+        text-shadow: none;
+        icon-shadow: none;
+        box-shadow: inset 0 1px rgba(255, 255, 255, 0); 
+}
+
+CajaWindow NautilusQueryEditor .toolbar,
+CajaWindow .notebook NautilusQueryEditor .toolbar {
+	background-image: none;
+	background-color: transparent;
+	padding: 6px 8px;
+}
+
+.caja-canvas-item {
+	border-radius: 5px;
+}
+
+.caja-desktop.nautilus-canvas-item {
+	color: @theme_bg_color;
+	text-shadow: 1px 1px black;
+}
+
+.caja-desktop.nautilus-canvas-item:active {
+	color: @theme_text_color;
+}
+
+.caja-desktop.nautilus-canvas-item:selected {
+	color: @theme_selected_fg_color;
+}
+
+.caja-desktop.nautilus-canvas-item:active,
+.caja-desktop.nautilus-canvas-item:prelight,
+.caja-desktop.nautilus-canvas-item:selected {
+	text-shadow: none;
+}
+
+/****************
+ * Mate-Panel *
+ ****************/
+
+/* the panel bar itself */
+.mate-panel-menu-bar {
+    background-color: @theme_bg_color;
+    background-image: none;
+    color: @theme_fg_color;
+    text-shadow: none;
+}
+
+/* first make all transparent */
+WnckSelector.menubar,
+PanelMenuBar.menubar,
+WnckSelector GtkMenuItem,
+PanelMenuBar GtkMenuItem,
+MatePanelApplet GtkToggleButton.button {
+    border-image: none;
+    border-color: transparent;
+    background-image: none;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/* workaround to avoid unwanted black frames if switching compositor on/off */
+.mate-panel-menu-bar .window-frame.csd.popup {
+    box-shadow: none;
+}
+
+MatePanelApplet {
+    border-width: 0;
+}
+
+/* panel grip */
+PanelToplevel.background.mate-custom-panel-background {
+    background-color: transparent;
+    border-radius: 2px;
+    }
+    
+/* hide buttons */
+PanelToplevel.background.mate-custom-panel-background .button {
+    background: transparent;
+    border-image: none;
+    border-width: 0px;
+    border-radius: 2px;
+    padding: 0px 4px;
+    box-shadow: inset  0px  1px shade (@theme_bg_color, 1.0),
+                inset  1px  0px shade (@theme_bg_color, 1.0),
+                inset -1px  0px shade (@theme_bg_color, 1.0),
+                inset  0px -1px shade (@theme_bg_color, 1.0);
+}
+
+PanelToplevel.background.mate-custom-panel-background .button:hover {
+    box-shadow: inset  0px  1px shade (@theme_selected_bg_color, 0.9),
+                inset  1px  0px shade (@theme_selected_bg_color, 0.9),
+                inset -1px  0px shade (@theme_selected_bg_color, 0.9),
+                inset  0px -1px shade (@theme_selected_bg_color, 0.9);
+} 
+
+/* the grid left from wnckpager and wncktasklist */
+MatePanelAppletFrameDBus {
+    /*background-image: -gtk-scaled(url("assets/panel-grid.svg"));*/
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+PanelSeparator.mate-custom-panel-background {
+    border-width: 0;
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@theme_bg_color, 0.96)),
+                                     to (shade (@theme_bg_color, 1.05)));
+    color: shade (@theme_selected_bg_color, 1.65);
+    text-shadow: none;
+}  
+
+/* main menu */
+PanelMenuBar.menubar .menuitem {
+    transition: all 300ms ease-out;
+    text-shadow: none;
+    font-weight: bold;
+    text-shadow: 0 -1px 2px alpha(white, 0.0), 0 1px 2px alpha(white, 0.0), 0 1px alpha(white, 0.0);
+}
+
+/* set selected menubar button */
+PanelMenuBar.menubar .menuitem:hover {
+    background-image: none;
+    background-color: transparent;
+    box-shadow: inset 0 -3px @theme_selected_bg_color;
+      color: black; 
+      font-weight: bold;
+      text-shadow: 0 -1px 2px alpha(white, 0.35), 0 1px 2px alpha(white, 0.35), 0 1px alpha(white, 0.35);
+    border-style: none;
+    border-image: none;
+    border-radius: 3px 3px 0px 0px;
+    border-width: 0px;
+}
+
+/* set normal menubar menuitem */
+PanelMenuBar.menubar .menu .menuitem {
+    padding: 6px;
+    font-weight: normal;
+    text-shadow: none;
+    color: @theme_fg_color;
+}
+
+PanelMenuBar.menubar .menu .separator {
+    color: #181820;
+    }
+
+/* set selected menubar menuitem */
+PanelMenuBar.menubar .menu .menuitem:hover {
+    color: #f6f6f6;
+    background-color: shade(@theme_selected_bg_color,1.2); 
+    border-style: none;
+    border-width: 1px;
+    font-weight: normal;
+    text-shadow: none;
+}
+
+/* desktop-applet, clockapplet, drivemount, character-map,
+dictionary */
+MatePanelApplet .button,
+MatePanelApplet .button.flat {
+    transition: all 400ms ease-out;
+    background-image: none;
+    padding: 4px 3px;
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    text-shadow: none;
+    color: @theme_fg_color;
+}
+
+MatePanelApplet .button:hover,
+MatePanelApplet .button:active,
+MatePanelApplet .button:checked,
+MatePanelApplet .button:active:hover
+MatePanelApplet .button:checked:hover,
+MatePanelApplet .button.flat:hover,
+MatePanelApplet .button.flat:active,
+MatePanelApplet .button.flat:checked,
+MatePanelApplet .button.flat:active:hover,
+MatePanelApplet .button.flat:checked:hover {
+    background-image: none;
+    background-color: @theme_selected_bg_color;
+}
+
+/*Wncklist */
+WnckTasklist .button {
+    transition: all 400ms ease-out;
+    padding: 2px;
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    text-shadow: none;
+    color: @theme_fg_color;
+    border-color: #1c1c1c;
+  background-color: #3c3c3e;			
+  background-image: -gtk-gradient (radial, 
+										center -0.5, 0,
+										center -0.1, 1.0,
+										from(rgba(255,255,255,0.1)),
+										to(alpha(black, 0.04))),
+						linear-gradient(to bottom,
+                                      transparent,
+                                      alpha(@theme_selected_bg_color, 0.02) 
+                                      ),
+                        linear-gradient(to bottom, 
+                                      shade(#3c3c3e, 1.2), 
+                                      shade(#3c3c3e, 0.9)
+                                      );     
+  text-shadow: 0 -1px rgba(0,0,0,0.7);
+  icon-shadow: 0 -1px rgba(0,0,0,0.7);                                   
+  box-shadow: 0 1px alpha(white, 0.08) inset,
+				0 2px alpha(white, 0.04) inset,
+				1px 0 alpha(white, 0.03) inset,
+				-1px 0 alpha(white, 0.02) inset,
+				0 -1px alpha(white, 0.03) inset,
+				0 -2px alpha(black, 0.02) inset,
+				0 -3px alpha(black, 0.01) inset,
+				0 1px alpha(white,0.08);
+}
+
+WnckTasklist .button:checked:hover,
+WnckTasklist .button:checked,
+WnckTasklist .button:active:hover,
+WnckTasklist .button:active {
+    border-radius: 3px;
+    color: shade(@theme_fg_color,1.12);
+    border-style: solid;
+    border-color: #191919;
+    border-bottom-color: #212123;
+    background-image: linear-gradient(to bottom, 
+                                      mix(shade(#3c3c3e, 0.9), @theme_selected_bg_color, 0.30), 
+                                      mix(shade(#3c3c3e, 1.2), @theme_selected_bg_color, 0.25));
+    background-color: transparent;
+    text-shadow: 0 1px rgba(0,0,0, 0.76923);
+    icon-shadow: 0 1px rgba(0,0,0, 0.76923);
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.07), inset 0 2px 1px -2px rgba(0, 0, 0, 0.6), 0 1px alpha(white,0.12);
+}
+
+WnckTasklist .button:hover {
+    border-radius: 3px;
+    border-image: none;
+    border-style: solid;
+    border-color: #1c1c1e;
+    background-color: shade(#3c3c3e, 0.9);		
+	background-image: -gtk-gradient (radial, 
+										center -0.5, 0,
+										center -0.1, 1.0,
+										from(rgba(255,255,255,0.4)),
+										to(alpha(black, 0.06))),
+						linear-gradient(to bottom,
+                                      transparent,
+                                      alpha(@theme_selected_bg_color, 0.16)
+                                      ),
+                        linear-gradient(to bottom, 
+                                      shade(shade(#3c3c3e, 1.2), 0.98),
+                                      shade(#3c3c3e, 0.9)
+                                      );  
+       box-shadow: 0 1px alpha(white, 0.09) inset,
+				0 2px alpha(white, 0.015) inset,
+				1px 0 alpha(white, 0.045) inset,
+				-1px 0 alpha(white, 0.03) inset,
+				0 -1px alpha(white, 0.045) inset,
+				0 -2px alpha(black, 0.02) inset,
+				0 -3px alpha(black, 0.01) inset,
+				0 1px 2px 0 rgba(0,0,0,0.2); 
+    text-shadow: 0 1px rgba(0,0,0, 0.76923);
+    icon-shadow: 0 1px rgba(0,0,0, 0.76923);
+    -gtk-image-effect: highlight;
+}
+
+/* set button WnckSelector */
+WnckSelector.menubar .menuitem {
+    border-radius: 3px;
+    color: @theme_fg_color;
+    border-style: solid;
+}
+
+/* set selected button WnckSelector */
+WnckSelector.menubar .menuitem:hover {
+    color: shade(@theme_fg_color);
+    border-color: #191919;
+    border-bottom-color: #212123;
+    background-image: linear-gradient(to bottom, 
+                                      mix(shade(#3c3c3e, 0.9), @theme_selected_bg_color, 0.30), 
+                                      mix(shade(#3c3c3e, 1.2), @theme_selected_bg_color, 0.25));
+    background-color: transparent;
+    text-shadow: 0 1px rgba(0,0,0, 0.76923);
+    icon-shadow: 0 1px rgba(0,0,0, 0.76923);
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.07), inset 0 2px 1px -2px rgba(0, 0, 0, 0.6), 0 1px alpha(white,0.12);
+}
+
+/* set WnckSelector menuitem */
+WnckSelector.menubar .menu .menuitem {
+    background-image:  none;
+    color: @theme_selected_fg_color;
+    border-style: none;
+    border-width: 0px;
+    border-radius: 0px;
+    font-weight: normal;
+    text-shadow: none;
+}
+
+/* set WnckSelector selected menuitem */
+WnckSelector.menubar .menu .menuitem:hover {
+    background-image:  linear-gradient(to bottom,
+                                       shade(@theme_selected_bg_color, 1.0),
+                                       shade(@theme_selected_bg_color, 1.0));
+    border-style: none;
+    font-weight: normal;
+    text-shadow: none;
+}
+
+WnckPager {
+    background-image: none;
+    border-color: none;
+    background-color: #323234;
+    text-shadow: none;
+}
+
+/* selected WnckPager */
+WnckPager:selected {
+    background-image: linear-gradient(to bottom,
+                                      shade(#323234, 0.85),
+                                       shade(#323234, 0.85));
+}
+
+/* prelight of WnckPager */
+WnckPager:hover {
+    background-image: linear-gradient(to bottom,
+                                      shade(#323234, 1.2),
+                                       shade(#323234, 1.2));
+}
+
+/* drivemount */
+DriveList .button,
+DriveList .button.flat {
+    padding: 4px 5px;
+    border-radius: 3px;
+    border-color: transparent;
+    border-image: none;
+    box-shadow: none;
+}
+
+ClockBox,
+.mate-panel-menu-bar.menubar,
+MatePanelApplet > GtkMenuBar.menubar {
+    font: normal;
+}
+
+/* no background for icon-padding area */
+GtkTrayIcon.background {
+    background-color: transparent;
+}
+
+NaTrayApplet {
+    -NaTrayApplet-icon-padding: 3px;
+    -NaTrayApplet-icon-size: 16;
+}
+
+/* system-monitor-applet */
+MatePanelApplet .horizontal .vertical .frame {
+    background-color: transparent;
+    border-style: none;
+    box-shadow: none;
+    border-radius: 0px;
+}
+
+/* Classic icon style */
+.mate-panel-menu-bar {
+    -PanelMenuBar-icon-visible: true;
+}
+
+/* volume applet, brightness applet */
+.mate-panel-applet-slider .frame {
+    background-color: @theme_bg_color;
+    border-image: none;
+    border-style: solid;
+    border-radius:3px;
+    padding: 1px;
+    margin: 0px;
+}
+
+.mate-panel-applet-slider .frame .frame{
+    background-color:transparent;
+    border-style: none;
+    box-shadow: none;
+}
+
+.mate-panel-applet-slider .frame .button {
+    padding: 4px 0px;
+    margin: 0px;
+}
+
+.mate-panel-applet-slider .frame .button:insensitive {
+    color: @insensitive_fg_color;
+    background-image: none;
+    border-image: none;
+    border-color: @theme_bg_color;
+
+}
+
+/****************
+ * Mate-Terminal *
+ ****************/
+
+/* Background mate-terminal, this isn't the normal way to style that! */
+TerminalWindow .entry {
+    -TerminalWindow-background-darkness: 0.88;
+    background-color: @selected_bg_color;
+    color: @theme_fg_color;
+}
+
+/*********
+ * Pluma *
+ *********/
+
+/* Pluma status bar */
+PlumaWindow .button.flat {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0), 0 1px rgba(255, 255, 255, 0);
+    text-shadow: none;
+    icon-shadow: none;
+}
+
+PlumaWindow .button.flat,
+PlumaWindow .button.flat:hover {
+    border-radius: 5px;
+}
+
+/* surpress styling of close button */
+PlumaWindow .notebook tab .button.flat,
+PlumaWindow .notebook tab .button.flat:hover {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+    box-shadow: inset 0 1px rgba(255,255,255,0), 0 1px rgba(255,255,255,0);
+    text-shadow: none;
+    icon-shadow: none;
+    border-image: none;
+}
+
+PlumaCloseButton.button.flat,
+PlumaCloseButton.button.flat:hover,
+PlumaCloseButton:prelight.button.flat,
+PlumaCloseButton:prelight.button.flat:hover {
+    padding: 0px;
+}
+
+/* close button tab text view */
+PlumaWindow .vertical .horizontal .vertical .notebook .horizontal PlumaCloseButton.button.flat,
+PlumaWindow .vertical .horizontal .vertical .notebook .horizontal PlumaCloseButton.button.flat:hover {
+    padding: 2px 0px;
+}
+
+/* pluma line numbers */
+PlumaView {
+    background-color: @theme_bg_color;
+}
+
+/* Printpreview */
+PlumaPrintPreview.vertical .toolbar.horizontal {
+    padding: 0px;
+}
+
+PlumaPrintPreview.vertical .toolbar.horizontal GtkToolItem .horizontal .entry {
+    padding: 4px 6px;
+}
+
+PlumaPrintPreview.vertical .toolbar.horizontal .button.image-button,
+PlumaPrintPreview.vertical .toolbar.horizontal .button.flat.image-button {
+    padding: 0px;
+}
+
+PlumaPrintPreview.vertical .toolbar.horizontal .button.text-button,
+PlumaPrintPreview.vertical .toolbar.horizontal .button.flat.text-button {
+    padding: 0px 8px;
+    border-radius: 2px;
+}
+
+PlumaPrintPreview.vertical GtkLayout {
+    background-color: @theme_base_color;
+}
+
+/* sidebar file-browser */
+PlumaPanel.vertical {
+    border-radius: 3px 3px 3px 3px;
+    border-width: 1px 1px 0px 0px;
+    border-style: solid;
+    border-color: @borders;
+}
+
+PlumaPanel.vertical .notebook {
+    background-color: shade (@theme_base_color, 1.04);
+    border-style: solid;
+    border-width: 0px 1px 1px 1px;
+    border-radius: 0px 0px 3px 3px;
+    border-color: @borders;
+}
+
+PlumaFileBrowserWidget.vertical .frame {
+    border-width: 1px 0px 1px 1px;
+    border-radius: 0px;
+}
+
+PlumaFileBrowserWidget.vertical .frame PlumaFileBrowserView{
+    background-color: shade(@theme_bg_color, 1.02);
+}
+
+PlumaPanel.vertical .horizontal .horizontal GtkImage {
+    padding: 0px;
+}
+
+PlumaFileBrowserWidget.vertical .toolbar.horizontal {
+    padding: 5px 0px;
+}
+
+PlumaFileBrowserWidget.vertical .toolbar.horizontal .button.flat,
+PlumaFileBrowserWidget.vertical .toolbar.horizontal .button.menu-button,
+PlumaFileBrowserWidget.vertical .toolbar.horizontal .button.image-button,
+PlumaFileBrowserWidget.vertical .toolbar.horizontal .button.flat.menu-button,
+PlumaFileBrowserWidget.vertical .toolbar.horizontal .button.flat.image-button {
+    padding: 3px;
+}
+
+PlumaFileBrowserWidget.vertical GtkExpander {
+    padding: 4px;
+}
+
+/***********************
+ * Mate-Control-Center *
+ ***********************/
+
+/* background */
+ShellWindow AppResizer .view {
+    background-color: shade(@theme_base_color, 1.00)
+}
+
+ShellWindow .button.flat {
+    border-image: none;
+}
+
+ShellWindow GtkScrolledWindow .button.flat {
+  border-radius: 12px;
+  }
+
+/* button hover of applications */
+ShellWindow GtkScrolledWindow .button.flat:hover {
+    border-radius: 12px;
+}
+
+/******************************
+ * mate-appearance-properties *
+ ******************************/
+
+/* mate-appearance-properties view */
+GtkDialog GtkScrolledWindow .view {
+    background-color: shade(@theme_base_color, 1.06)
+}
+
+/* atril and eom */
+EggToolbarEditor.vertical GtkScrolledWindow .frame {
+    background-color: shade(@theme_base_color, 1.04);
+    border-color: @borders;
+    border-width: 1px;
+    border-radius: 0px;
+    border-style: solid;
+}
+
+/*******
+ * Eom *
+ *******/
+
+EomThumbNav .button.flat {
+    border-color: @borders;
+    border-image: none;
+}
+
+EomThumbNav .button.flat:first-child {
+    border-radius: 4px 0px 0px 4px;
+    border-width: 1px 0px 1px 1px;
+    background-image: linear-gradient(to left,
+                                      #3c3c3e,
+                                      #3c3c3e);
+}
+
+EomThumbNav .button.flat:last-child {
+    border-radius: 0px 4px 4px 0px;
+    border-width: 1px 1px 1px 0px;
+    background-image: linear-gradient(to right,
+                                      #3c3c3e,
+                                      #3c3c3e);
+}
+
+EomThumbNav .button.flat:hover:first-child {
+    background-image: linear-gradient(to left,
+                                      #424244,
+                                      #424244);
+}
+
+EomThumbNav .button.flat:hover:last-child {
+    background-image: linear-gradient(to right,
+                                      #424244,
+                                      #424244);
+}
+
+EomThumbNav .button.flat:insensitive {
+    background-image: none;
+    border-color: transparent;
 }
 
 /* GTK NAMED COLORS
