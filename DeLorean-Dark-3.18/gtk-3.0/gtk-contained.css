@@ -7487,6 +7487,12 @@ DConfWindow DConfKeyView.view row:hover:backdrop {
     color: #cdcdcf;
 }
 
+/* Boxes */
+.content-bg /* DOESN'T WORK!!! */{
+background-color: @theme_base_color;
+background-image: none;
+color: @theme_fg_color;}
+
 /***********************************************************************
  *              MATE GTK3                                              *
  **********************************************************************/
@@ -8456,6 +8462,13 @@ EomThumbNav .button.flat:insensitive {
     background-image: none;
     border-color: transparent;
 }
+
+/* Nautilus List View Fix */
+  NautilusListView GtkTreeView.view:selected,
+  NautilusListView .view:selected,
+  NautilusListView .view:active,
+  NautilusListView .view:checked {
+    color: #8b8b8c;}
 
 /* GTK NAMED COLORS
    ----------------
