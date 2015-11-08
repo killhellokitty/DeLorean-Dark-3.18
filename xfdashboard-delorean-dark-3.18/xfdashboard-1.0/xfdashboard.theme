@@ -1,0 +1,15 @@
+[Xfdashboard Theme]
+Name=xfdashboard-dorian-flat
+Name[es]=xfdashboard-dorian-plana
+Name[fr]=xfdashboard-dorian-plat
+Name[sr]=xfdashboard-Дориан плоский
+Comment=Dorian-Flat theme for xfdashboard
+Comment[es]=Tema de Dorian-Piso en xfdashboard
+Comment[fr]=Thème Dorian-Appartement à xfdashboard
+Comment[sr]=Дориан-квартира тема для xfdashboard
+Style=xfdashboard-dorian-flat.css
+Layout=xfdashboard.xml;xfdashboard-secondary.xml
+Effects=effects.xml
+Author=killhellokitty
+Version=0.4.2
+Screenshot=screenshot-xfdashboard-dorian-flat.png

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=DeLorean-3.18
+Comment=A metalic theme
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=DeLorean-3.18
+MetacityTheme=DeLorean-3.18
+IconTheme=gnome
+CursorTheme=DMZ-Black
+ButtonLayout=menu:minimize,maximize,close

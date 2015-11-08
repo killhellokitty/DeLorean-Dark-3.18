@@ -1,0 +1,128 @@
+#openbox themerc edited with obtheme
+border.color: #000000
+menu.items.active.bg: Solid Sunken
+menu.items.active.bg.color: #0F0F10
+menu.items.active.bg.border.color: #1C1C1E
+menu.items.active.text.color: #FFFFFF
+menu.items.bg: Solid Raised
+menu.items.bg.color: #151516
+menu.items.bg.border.color: #1C1C1E
+menu.items.disabled.text.color: #5A5A5D
+menu.items.font: Bitstream Vera Sans:pixelsize=10
+menu.items.text.color: #a0a0a0
+menu.separator.color: #2C2C2E
+menu.title.bg: Gradient Vertical Interlaced Sunken
+menu.title.bg.color: #0F0F10
+menu.title.bg.colorTo: #2C2C2E
+menu.title.bg.border.color: #1C1C1E
+menu.title.bg.interlace.color: #030304
+menu.title.text.color: #FFFFFF
+menu.title.text.font: Bitstream Vera Sans:pixelsize=10
+menu.title.text.justify: center
+osd.unhilight.bg: Solid Raised
+osd.unhilight.bg.color: #2C2C2E
+osd.unhilight.bg.border.color: #1C1C1E
+padding.width: 1
+window.active.border.color: #0F0F10
+window.active.button.disabled.bg: Gradient Diagonal Raised
+window.active.button.disabled.bg.color: #6A6A6B
+window.active.button.disabled.bg.colorTo: #5A5A5B
+window.active.button.disabled.bg.border.color: #1C1C1E
+window.active.button.disabled.image.color: #808080
+window.active.button.hover.bg: Gradient Diagonal Raised
+window.active.button.hover.bg.color: #3C3C3E
+window.active.button.hover.bg.colorTo: #1F1F20
+window.active.button.hover.bg.border.color: #1C1C1E
+window.active.button.hover.image.color: #FFFFFF
+window.active.button.pressed.bg: Gradient Diagonal Sunken
+window.active.button.pressed.bg.color: #080809
+window.active.button.pressed.bg.colorTo: #0F0F10
+window.active.button.pressed.bg.border.color: #000000
+window.active.button.pressed.image.color: #FFFFFF
+window.active.button.toggled.hover.bg: Gradient Diagonal Sunken
+window.active.button.toggled.hover.bg.color: #0F0F10
+window.active.button.toggled.hover.bg.colorTo: #080809
+window.active.button.toggled.hover.bg.border.color: #000000
+window.active.button.unpressed.bg: Gradient Diagonal Raised
+window.active.button.unpressed.bg.color: #2E2C2C
+window.active.button.unpressed.bg.colorTo: #0F0F10
+window.active.button.unpressed.bg.border.color: #1C1C1E
+window.active.button.unpressed.image.color: #CDCDCF
+window.active.client.color: #0F0F10
+window.active.grip.bg: Gradient Diagonal Interlaced Sunken
+window.active.grip.bg.color: #0F0F10
+window.active.grip.bg.colorTo: #2C2C2E
+window.active.grip.bg.border.color: #1C1C1E
+window.active.grip.bg.interlace.color: #1C1C1E
+window.active.handle.bg: Gradient Vertical Interlaced Raised
+window.active.handle.bg.color: #2C2C2E
+window.active.handle.bg.colorTo: #0F0F10
+window.active.handle.bg.border.color: #1C1C1E
+window.active.handle.bg.interlace.color: #1C1C1E
+window.active.label.bg: Gradient Vertical Interlaced Sunken
+window.active.label.bg.color: #0F0F10
+window.active.label.bg.colorTo: #2C2C2E
+window.active.label.bg.border.color: #1C1C1E
+window.active.label.bg.interlace.color: #030304
+window.active.label.text.color: #CDCDCF
+window.active.label.text.font: Bitstream Vera Sans:pixelsize=10
+window.active.title.bg: Gradient Vertical Interlaced Raised
+window.active.title.bg.color: #2C2C2E
+window.active.title.bg.colorTo: #0F0F10
+window.active.title.bg.border.color: #1C1C1E
+window.active.title.bg.interlace.color: #030304
+window.client.padding.height: 0
+window.client.padding.width: 1
+window.handle.width: 5
+window.inactive.border.color: #1C1C1E
+window.inactive.button.disabled.bg: Gradient Diagonal Raised
+window.inactive.button.disabled.bg.color: #6A6A6D
+window.inactive.button.disabled.bg.colorTo: #5A5A5D
+window.inactive.button.disabled.bg.border.color: #1C1C1E
+window.inactive.button.disabled.image.color: #404040
+window.inactive.button.hover.bg: Gradient Diagonal Interlaced Raised
+window.inactive.button.hover.bg.color: #2C2C2E
+window.inactive.button.hover.bg.colorTo: #0F0F10
+window.inactive.button.hover.bg.border.color: #1C1C1E
+window.inactive.button.hover.bg.interlace.color: #030304
+window.inactive.button.pressed.bg: Gradient Diagonal Interlaced Sunken
+window.inactive.button.pressed.bg.color: #080809
+window.inactive.button.pressed.bg.colorTo: #0F0F10
+window.inactive.button.pressed.bg.border.color: #000000
+window.inactive.button.pressed.bg.interlace.color: #030304
+window.inactive.button.pressed.image.color: #707478
+window.inactive.button.toggled.hover.bg: Gradient Diagonal Interlaced Sunken
+window.inactive.button.toggled.hover.bg.color: #0F0F10
+window.inactive.button.toggled.hover.bg.colorTo: #080809
+window.inactive.button.toggled.hover.bg.border.color: #000000
+window.inactive.button.toggled.hover.bg.interlace.color: #030304
+window.inactive.button.toggled.unpressed.image.color: #CDCDCF
+window.inactive.button.unpressed.bg: Gradient Diagonal Interlaced Raised
+window.inactive.button.unpressed.bg.color: #2C2C2E
+window.inactive.button.unpressed.bg.colorTo: #0F0F10
+window.inactive.button.unpressed.bg.border.color: #000000
+window.inactive.button.unpressed.bg.interlace.color: #030304
+window.inactive.button.unpressed.image.color: #505050
+window.inactive.client.color: #0F0F10
+window.inactive.grip.bg: Gradient Diagonal Interlaced Sunken
+window.inactive.grip.bg.color: #000000
+window.inactive.grip.bg.colorTo: #202022
+window.inactive.grip.bg.border.color: #000000
+window.inactive.grip.bg.interlace.color: #030304
+window.inactive.handle.bg: Gradient Vertical Interlaced Raised
+window.inactive.handle.bg.color: #202022
+window.inactive.handle.bg.colorTo: #000000
+window.inactive.handle.bg.border.color: #000000
+window.inactive.handle.bg.interlace.color: #030304
+window.inactive.label.bg: Gradient Vertical Interlaced Sunken
+window.inactive.label.bg.color: #000000
+window.inactive.label.bg.colorTo: #202022
+window.inactive.label.bg.border.color: #000000
+window.inactive.label.bg.interlace.color: #030304
+window.inactive.label.text.color: #505050
+window.inactive.title.bg: Gradient Vertical Interlaced Raised
+window.inactive.title.bg.color: #202022
+window.inactive.title.bg.colorTo: #000000
+window.inactive.title.bg.border.color: #000000
+window.inactive.title.bg.interlace.color: #030304
+window.label.text.justify: center

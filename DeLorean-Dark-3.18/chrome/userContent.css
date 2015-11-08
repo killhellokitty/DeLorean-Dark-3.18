@@ -1,0 +1,740 @@
+/************************ Add USER code BELOW this line *********************/
+
+
+
+
+
+
+
+
+
+
+/************************ Add USER code ABOVE this line *********************/
+                     /*by killhellokitty/jo-shva mar 2013*/
+/************ Fixes Color of Input/Entry Boxes within Web-Pages **************/
+/*remove if you would like dark-gray input boxes in web-pages, or change to your liking*/
+input {
+    -moz-appearance: none !important;
+    background-color: white !important;
+    color: #000 !important;
+}
+
+input:not(.urlbar-input):not(.textbox-input) {
+    -moz-appearance: none !important;
+    background-color: white;
+    color: black;
+}
+
+#downloads-indicator-counter {
+    color: white;
+}
+
+#textbox-input-box,
+textarea {
+    -moz-appearance: none !important;
+    background-color: white !important;
+    color: #000 !important;
+}
+
+select {
+    -moz-appearance: none !important;
+    background-color: black;
+    color: white;
+}
+
+/*************************** THEME Below this line ***************************/
+/****************************** Page background ******************************/
+*/*|*:root {
+  -moz-appearance: none!important;
+  background-color:  rgb(32,32,32)!important;
+  background-repeat: repeat!important;
+  color: WindowText;
+}*/
+/* Background for blank tab and Firefox startup blank page
+before homepage loads...
+see userChrome.css for background before clicked link page loads */
+@-moz-document  url(about:blank) {
+html { background-color: #2c2c2e !important; }}
+/* added dickvls just because */
+@-moz-document url-prefix(about:blank) {
+* { background-color: #2c2c2e; }}
+
+#newtab-vertical-margin,
+#newtab-customize-button {
+  background-color: #2c2c2e!important;
+  }
+/********************************** Start Page *******************************/
+
+@-moz-document  url(about:home) {
+body { background:#2c2c2e !important;
+ }}
+
+@-moz-document  url(about:home) {
+div#snippets { color:#cdcdcf !important;
+text-shadow: rgba(0,0,0,0.4) 0px 1px 0px !important;
+ }}
+
+@-moz-document  url(about:home) {
+div#snippets a:link { color:#4b91df !important;
+text-shadow: rgba(0,0,0,0.45) 0px -1px !important;
+ }}
+
+@-moz-document  url(about:home) {
+div#snippets a:hover { color:#7db0e8 !important;
+text-shadow: rgba(0,0,0,0.45) 0px -1px 0px !important;
+ }}
+
+@-moz-document  url(about:home) {
+div#launcher { 
+  background:url("images/background.png")  !important;
+  border: 1px none #1c1c1e!important;
+  border-right-width: 0;
+  border-left-width: 0;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.3) , 0 1px #1c1c1e,
+				inset 0 0 4px 1px rgba(0,0,0,0.18), 0 -1px #1c1c1e, inset 0 1px rgba(255,255,255,0.12)!important;
+  margin: 0px 0px 40px 0px !important;
+ }}
+
+@-moz-document  url(about:home) {
+div#launcher button{ 
+margin-right: 2px!important;
+margin-left: 2px!important;
+background: -moz-linear-gradient( to bottom, #48484a, #363638) !important;
+border:1px solid #1c1c1e !important;  
+  box-shadow: 0 1px rgba(255,255,255, 0.08) inset,
+				0 2px rgba(255,255,255, 0.04) inset,
+				1px 0 rgba(255,255,255, 0.03) inset,
+				-1px 0 rgba(255,255,255, 0.02) inset,
+				
+				0 -2px rgba(0,0,0, 0.02) inset,
+				0 -3px rgba(0,0,0, 0.01) inset,
+				0 1px rgba(255,255,255,0.08)!important;
+  color: #cdcdcd !important;
+text-shadow: rgba(0,0,0,0.45) 0px 1px 0px !important;
+-moz-transition: background .2s ease-in !important;
+ }}
+
+@-moz-document  url(about:home) {
+div#launcher button:hover{
+border:1px solid #1c1c1e !important;
+  background: -moz-linear-gradient(to bottom, #474749,#353537) !important;
+  box-shadow: 0 1px rgba(255,255,255, 0.09) inset,
+				0 2px rgba(255,255,255, 0.015) inset,
+				1px 0 rgba(255,255,255, 0.045) inset,
+				-1px 0 rgba(255,255,255, 0.03) inset,
+				
+				0 -2px rgba(0,0,0, 0.02) inset,
+				0 -3px rgba(0,0,0, 0.01) inset,
+				0 1px 2px 0 rgba(0,0,0,0.2)!important;
+  color: #f6f6f8 !important;
+  -moz-transition: background .2s ease-in !important;
+ }}
+
+@-moz-document  url(about:home) {
+div#restorePreviousSessionSeparator
+{ 
+border:2px solid rgba(0,0,0,0) !important;
+  background: rgba(0,0,0,0)!important;
+  box-shadow:  none!important;
+ }}
+
+@-moz-document  url(about:home) {
+#searchText { 
+  color: #000 !important;
+  border: 1px solid rgba(0,0,0,0.28) !important;
+  border-radius: 2px 0px 0px 2px!important;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.26)!important;
+  background-color: #2c2c2e!important;
+    background-image: -moz-linear-gradient(to bottom, rgba(255,255,255,0.45), rgba(255,255,255,0.45) )!important;
+  margin: 0px !important;
+  margin-bottom: 1px !important;
+-moz-background-clip: padding; 
+ }}
+
+@-moz-document  url(about:home) {
+#searchText:focus { 
+  color: #000 !important;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.35)!important; 
+  border: 1px solid #0f0f10 !important;
+ }}
+
+@-moz-document  url(about:home) {
+#searchSubmit {
+-moz-appearance: none !important; 
+  color: #cdcdcd !important;
+  border-radius: 0px 2px 2px 0!important;
+  padding: 3px !important;
+  padding-right: 5px !important;
+  background: -moz-linear-gradient( to bottom, #48484a, #363638) !important;				   
+  border: 1px solid #1c1c1e !important;    
+  box-shadow: 0 1px rgba(255,255,255, 0.08) inset,
+				0 2px rgba(255,255,255, 0.04) inset,
+				1px 0 rgba(255,255,255, 0.03) inset,
+				-1px 0 rgba(255,255,255, 0.02) inset,
+				
+				0 -2px rgba(0,0,0, 0.02) inset,
+				0 -3px rgba(0,0,0, 0.01) inset,
+				0 1px rgba(255,255,255,0.08)!important;
+  margin: 0px !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  -moz-background-clip: padding!important; 
+  text-shadow: rgba(0,0,0,0.45) 0px 1px 2px !important;
+  -moz-transition: background .2s ease-in !important;
+ }}
+
+
+@-moz-document  url(about:home) {
+#searchSubmit:hover { 
+-moz-appearance: none !important;
+  border:1px solid #1c1c1e !important;
+  background: -moz-linear-gradient(to bottom, #474749,#353537) !important;
+  box-shadow: 0 1px rgba(255,255,255, 0.09) inset,
+				0 2px rgba(255,255,255, 0.015) inset,
+				1px 0 rgba(255,255,255, 0.045) inset,
+				-1px 0 rgba(255,255,255, 0.03) inset,
+				
+				0 -2px rgba(0,0,0, 0.02) inset,
+				0 -3px rgba(0,0,0, 0.01) inset,
+				0 1px 2px 0 rgba(0,0,0,0.2)!important;
+  color: #f6f6f8 !important;
+  text-shadow: rgba(0,0,0,0.45) 0px 1px 0px !important;
+  -moz-transition: background .2s ease-in !important;
+ }}
+
+@-moz-document  url(about:home) {
+#searchSubmit:active,
+#searchSubmit:active:hover { 
+-moz-appearance: none !important;
+  background: -moz-lineaer-gradient(to bottom, #2a2a2c, #3a3a3c);
+      text-shadow: 0 -1px rgba(0, 0, 0, 0.62353);
+      icon-shadow: 0 -1px rgba(0, 0, 0, 0.62353)!important; 
+  border: 1px solid #191919 !important;				
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.07), inset 0 2px 1px -2px rgba(0, 0, 0, 0.6), 0 1px rgba(255,255,255,0.12)!important;
+  color: #fff !important; 
+  text-shadow: rgba(0,0,0,0.6) 0px 1px 2px !important;
+  -moz-transition: background .2s ease-in !important;
+ }}
+
+/***************************** Add-ons Manager ********************************/
+#addons-page {
+  -moz-appearance: none!important;
+  background: #2c2c2e!important;
+  color: WindowText!important!
+  padding: 0 !important;
+}
+ 
+#view-port-container {
+  /* Needed to allow the radius to clip the inner content, see bug 595656 */
+  -moz-appearance: none !important;
+  overflow: hidden!important;
+  background:#2c2c2e !important;
+  width:500px !important;
+  height:500px !important;
+  color: #cdcdcf !important;
+  border: 0 none !important;
+  border-radius: 0px !important;
+  border-left: 2px solid !important;
+  -moz-border-left-colors:    rgba(255, 255, 255, 0.02)  rgba(0, 0, 0, 0.18)!important;
+  border-top: 2px solid !important;
+  -moz-border-top-colors:    rgba(255, 255, 255, 0.02)  rgba(0, 0, 0, 0.18)!important;
+  margin: -18px !important;
+  margin-left: 0px !important;
+  margin-top: 0px !important;
+  box-shadow:inset -1px 0 3px rgba(0,0,0,0.65) !important;
+}
+
+#categories {
+  -moz-appearance: none!important;
+  padding-top: 12px!important;
+  padding-bottom: 12px!important;
+  background: #1a1a1a !important;
+  
+  margin-right: 0px !important;
+  margin-top: 0px !important;
+}
+
+.category,
+#categories richlistitem {
+  -moz-appearance: none !important;
+  background: rgba(0,0,0,0) !important;
+  min-height: 0  !important;
+  padding: 10px 4px  !important;
+  -moz-box-align: center  !important;
+  overflow: hidden  !important;
+  margin: 0px !important;
+  border-radius: 0px !important;
+  border: 0px none transparent !important;
+  }
+
+#categories richlistitem:hover{
+  color: #f6f6f6 !important;
+  background: #181819 !important;
+}
+
+.category[selected],
+#categories richlistitem[selected="true"] {
+  background: #141415 !important;
+  border: 0px none #00456d!important;
+  border-right: none !important;
+  color: #ffffff !important;
+  font-weight: bold !important;
+  box-shadow: none !important;					
+}
+
+#categories richlistitem{
+  color: #aaaaab !important;
+}
+
+#categories richlistitem:hover{
+  color: #cdcdcf !important;
+}
+
+#categories richlistitem[selected="true"]:hover {
+	background: #141415 !important;
+  color: #fff !important;
+}
+
+/*this makes the selected addon to installs main page legable within dark theme*/
+#discover-browser {
+  background: rgb(190,190,190) !important;
+  text-shadow: none !important;
+}
+
+.loading {
+  list-style-image: url("images/loading.png")!important;
+  border-radius: 5px!important;
+  padding-left: 18px;
+  padding-right: 18px;
+  background: rgba(0,0,0,0.64) !important;
+  box-shadow: none!important;
+}
+
+#header-search {
+  -moz-appearance: none !important;
+  border-radius: 2px !important;
+  color: #000 !important;
+  border: 1px solid rgba(0,0,0,0.28) !important;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.26)!important;
+  background-color: #2c2c2e!important;
+    background-image: -moz-linear-gradient(to bottom, rgba(255,255,255,0.45), rgba(255,255,255,0.45) )!important;
+  padding: 3px !important;
+  margin: 0px !important;
+  margin-bottom: 1px !important;
+}
+
+#header-search input {
+    -moz-appearance: none !important;
+    background-color: #2c2c2e!important;
+    background-image: -moz-linear-gradient(to bottom, rgba(255,255,255,0.45), rgba(255,255,255,0.45) )!important;
+    color: black !important;
+}
+
+#header-search textarea {
+    -moz-appearance: none !important;
+    background-color: #2c2c2e!important;
+    background-image: -moz-linear-gradient(to bottom, rgba(255,255,255,0.45), rgba(255,255,255,0.45) )!important;
+    color: black !important;
+}
+/*
+#addons-page > #header {
+-moz-appearance: none !important;
+position: relative!important;
+margin-top: -17px !important;
+margin-left: -18px !important;
+margin-right: -18px !important;
+margin-bottom:0px !important;
+  padding: 15px 11px 14px 19px!important;
+  background:  #1a1a1a !important;
+}*/
+
+#nav-header {
+  background: #1a1a1a !important;
+  }
+
+.view-header {
+  background: rgba(0,0,0,0) !important;
+  border:none!important;
+  border-bottom: 0px none rgba(0,0,0,0.32) !important;
+  box-shadow: none!important;
+  padding: 4px !important;
+  margin: 0 !important;
+  min-height: 31px !important;
+}
+
+#search-filter {
+  padding: 5px 20px !important;
+  font-size: 120% !important;
+  overflow-x: hidden !important;
+  color: #cdcdcf !important;
+  background: #323234 !important;				   
+  border: 1px solid #1c1c1e !important;    
+}
+
+.addon {
+  color:#cdcdcf !important;
+  border:  0 solid !important;
+  border-bottom: 0px none rgba(0,0,0,0) !important;
+  border-top: 0px none rgba(0,0,0,0) !important;
+  box-shadow: inset 0 -1px rgba(0,0,0, 0.18)!important;
+  background: #202022;
+}
+
+.addon:hover {
+  background: #222224!important;
+   box-shadow: inset 0 -1px rgba(0,0,0, 0.18)!important;
+	-moz-transition: background .2s ease-in !important;			
+}
+
+.addon:first-of-type,
+.addon:first-of-type:hover {
+  box-shadow: inset 0 -1px rgba(0,0,0, 0.18)!important;
+}
+
+.addon[selected] {
+  background: #131315!important;
+  color: #fff !important;
+   box-shadow: none!important;
+  -moz-transition: opacity .2s ease-in;
+}
+
+.addon[selected]:hover {
+  color: #ffffff !important;
+  background: #151517!important;
+  box-shadow: none !important;
+  -moz-transition: opacity 120ms ease-in;
+}
+
+.addon-view[active="false"],
+.addon-view[active="false"]:hover {
+  background: url("images/stripe-3.png"), #171719!important;
+  
+    background-repeat: repeat!important;
+    box-shadow: none!important;
+}
+
+.addon-view[active="false"][selected],
+.addon-view[active="false"][selected]:hover {
+  background: url("images/stripe-3.png"), #131315!important;
+    background-repeat: repeat!important;
+}
+
+.addon .name-container{
+  color: #cdcdcf !important;
+}
+
+.addon:hover .name-container{
+  color: #f6f6f6 !important;
+}
+
+.addon[selected] .name-container,
+.addon[selected="true"] .name-container{
+  color: #ffffff!important;
+}
+
+.addon[selected="true"]:hover .name-container{
+  color: #fff !important;
+}
+
+.creator {
+  font-weight: lighter !important;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.42) !important;
+}
+
+.creator .text-link {
+  color: #5b9be2 !important;
+}
+
+.addon-view[active="false"],
+.addon-view[active="false"]:hover {
+  color: #6a6a6a!important;
+}
+
+.addon-view[active="false"] .name-container,
+.addon-view[active="false"] .name-container:hover {
+  color: #6a6a6a !important;
+}
+
+.addon-view[active="false"][selected],
+.addon-view[active="false"][selected]:hover {
+  color: #6a6a6a !important;
+}
+
+.addon-view[active="false"][selected] .name-container {
+  color: #6a6a6a !important;
+}
+
+.addon-view[active="false"][selected]:hover .name-container {
+  color: #6a6a6a !important;
+}
+
+.warning,
+.pending,
+.error {
+  -moz-margin-start: 48px !important;
+  font-weight: bold !important;
+  -moz-box-align: center !important;
+}
+
+.addon-view .warning {
+  color: #f57900 !important;
+}
+
+.addon-view .error {
+  color: #940000 !important;
+}
+
+.addon-view .pending {
+  color:#73d216 !important;
+}
+
+.addon-view[pending="disable"] .pending,
+.addon-view[pending="uninstall"] .pending {
+  color: #5a5a5d !important;
+}
+
+.sorter,
+.header-button {
+  -moz-appearance: none !important;
+  margin: 0px 5px !important;
+  min-width: 6.3em !important;
+  border-radius: 0px!important;    
+  padding: 0!important; 
+  background: #3c3c3e!important; 
+					   
+  border: 0px none #002033 !important; 
+  box-shadow: inset 0 1px rgba(255,255,255,0.03), 0 2px rgba(0,0,0,0.18)!important;
+}
+
+.sorter[disabled="true"],
+.header-button[disabled="true"] {
+  color: rgba(0,0,0,0) !important;
+  background-image: url("images/stripe-5.png")!important;
+    background-repeat: repeat!important;
+  }
+  
+.sorter:not([open="true"]):not([disabled="true"]):not(:active):hover,
+.header-button:not([open="true"]):not([disabled="true"]):not(:active):hover {
+  background:#424244!important;   
+  border: 0px none #002033 !important; 
+  box-shadow: inset 0 1px rgba(255,255,255,0.03), 0 2px rgba(0,0,0,0.28)!important;
+  color: #f6f6f6 !important;
+} 
+
+.sorter:not([open="true"]):not([disabled="true"]):hover:active,
+.sorter:not([open="true"]):not([disabled="true"]):active,
+.sorter[checked="true"]:not([disabled="true"]),
+.sorter[open="true"]:not([disabled="true"])
+.header-button:not([open="true"]):not([disabled="true"]):hover:active,
+.header-button:not([open="true"]):not([disabled="true"]):active,
+.header-button[checked="true"]:not([disabled="true"]),
+.header-button[open="true"]:not([disabled="true"]) {
+  background: #202022!important; 
+  border: 0px none #002033 !important; 				
+  box-shadow: inset 0 1px rgba(255,255,255,0.03), 0 2px rgba(0,0,0,0.18)!important;
+  color: #fff !important;
+}
+
+richlistitem .addon-control {
+  color: #cdcdcd !important;
+  border-radius: 2px !important;
+  background: #363638 !important;				   
+  border: 1px solid #1c1c1e !important;    
+  box-shadow: 0 1px rgba(255,255,255, 0.08) inset,
+				0 2px rgba(255,255,255, 0.04) inset,
+				1px 0 rgba(255,255,255, 0.03) inset,
+				-1px 0 rgba(255,255,255, 0.02) inset,
+				
+				0 -2px rgba(0,0,0, 0.02) inset,
+				0 -3px rgba(0,0,0, 0.01) inset!important;
+  }
+richlistitem .addon-control:hover:not([disabled]) {
+  color: #f6f6f6 !important;
+  border-radius: 2px !important;
+  background: #3c3c3e !important;				   
+  border: 1px solid #1c1c1e !important;    
+  box-shadow: 0 1px rgba(255,255,255, 0.08) inset,
+				0 2px rgba(255,255,255, 0.04) inset,
+				1px 0 rgba(255,255,255, 0.03) inset,
+				-1px 0 rgba(255,255,255, 0.02) inset,
+				
+				0 -2px rgba(0,0,0, 0.02) inset,
+				0 -3px rgba(0,0,0, 0.01) inset!important;
+  }
+
+/******************************** New Tab Window *****************************/
+#newtab-scrollbox,
+#newtab-scrollbox[page-disabled="true"]
+{
+    background:#1a1a1a !important;
+    background-attachment: fixed !important;
+}
+
+.newtab-cell {
+  -moz-margin-end: 20px !important;
+  background-color: #154478 !important;
+  border: 3px solid #154478 !important;
+  border-radius: 7px !important;
+  box-shadow: -1px -1px 3px rgba(0,0,0,0.2),
+				1px 1px 3px rgba(0,0,0,0.2) !important;
+  -moz-transition: border-color 100ms ease-out,
+					box-shadow 100ms ease-out!important;
+}
+
+.newtab-cell:hover:not(:empty) {
+  background-color: #123b67;
+  box-shadow: -1px -1px 4px rgba(0,0,0,0.26),
+				1px 1px 4px rgba(0,0,0,0.26) !important;
+  border: 3px solid #15478 !important;
+  -moz-transition: .2s ease-out;
+}
+
+.newtab-site:hover,
+.newtab-site[dragged] {
+  box-shadow: -1px -1px 4px rgba(0,0,0,0.26),
+				1px 1px 4px rgba(0,0,0,0.26) !important;						
+}
+
+.newtab-site[dragged] {
+  -moz-transition-property: box-shadow, background-color;
+  background-color: rgba(0,0,0,.45)!important;
+}
+
+.newtab-title {
+  padding: 0 8px!important;
+  background:#154478!important;
+  box-shadow: 0px 1px 1px rgba(255,255,255,.03)inset,
+				1px -1px 1px rgba(0,0,0,.36)inset, 
+				-1px 0px 1px rgba(0,0,0,.36)inset, 
+				1px 1px 4px rgba(0,0,0,0.26), 
+				-1px 0px 4px rgba(0,0,0,0.26)!important;
+  color: #fff !important;
+  line-height: 24px!important;
+}
+
+.newtab-control {
+  width: 24px !important;
+  height: 24px !important;
+  padding: 1px 2px 3px !important;
+  border: none !important;
+  background: transparent url(chrome://browser/skin/newtab/controls.png) !important;
+}
+
+.newtab-control-pin:hover {
+  background-position: -24px 0!important;
+}
+
+.newtab-control-pin:active {
+  background-position: -48px 0!important;
+}
+
+.newtab-control-pin[pinned] {
+  background-position: -72px 0!important;
+}
+
+.newtab-control-pin[pinned]:hover {
+  background-position: -96px 0!important;
+}
+
+.newtab-control-pin[pinned]:active {
+  background-position: -120px 0!important;
+}
+
+.newtab-control-block {
+  background-position: -144px 0!important;
+}
+
+.newtab-control-block:hover {
+  background-position: -168px 0!important;
+}
+
+.newtab-control-block:active {
+  background-position: -192px 0!important;
+}
+
+#newtab-toggle {
+  width: 16px!important;
+  height: 16px!important;
+  padding: 0!important;
+  border: none!important;
+  background: -216px 0 transparent url(chrome://browser/skin/newtab/controls.png)!important;
+}
+
+#newtab-toggle[page-disabled] {
+  background-position: -232px 0!important;
+}
+
+#newtab-search-text { 
+  color: #000 !important;
+  border: 1px solid rgba(0,0,0,0.28) !important;
+  border-radius: 2px 0px 0px 2px!important;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.26)!important;
+  background-color: #2c2c2e!important;
+    background-image: -moz-linear-gradient(to bottom, rgba(255,255,255,0.45), rgba(255,255,255,0.45) )!important;
+  padding: 3px !important;
+  margin: 0px !important;
+  margin-bottom: 1px !important;
+-moz-background-clip: padding; 
+ }
+
+#newtab-search-text:focus { 
+  color: #000 !important;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.35)!important; 
+  border: 1px solid #0f0f10 !important; 
+ }
+
+#newtab-search-submit { 
+  color: #cdcdcd !important;
+  border-radius: 0px 2px 2px 0!important;
+  padding: 3px !important;
+  padding-right: 5px !important;
+  background: -moz-linear-gradient( to bottom, #48484a, #363638) !important;				   
+  border: 1px solid #1c1c1e !important;    
+  box-shadow: 0 1px rgba(255,255,255, 0.08) inset,
+				0 2px rgba(255,255,255, 0.04) inset,
+				1px 0 rgba(255,255,255, 0.03) inset,
+				-1px 0 rgba(255,255,255, 0.02) inset,
+				
+				0 -2px rgba(0,0,0, 0.02) inset,
+				0 -3px rgba(0,0,0, 0.01) inset,
+				0 1px rgba(255,255,255,0.08)!important;
+  margin: 0px !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  -moz-background-clip: padding!important; 
+  text-shadow: rgba(0,0,0,0.45) 0px 1px 2px !important;
+  -moz-transition: background .2s ease-in !important;
+ }
+
+#newtab-search-submit:hover { 
+  -moz-appearance: none !important;
+  border:1px solid #1c1c1e !important;
+  background: -moz-linear-gradient(to bottom, #474749,#353537) !important;
+  box-shadow: 0 1px rgba(255,255,255, 0.09) inset,
+				0 2px rgba(255,255,255, 0.015) inset,
+				1px 0 rgba(255,255,255, 0.045) inset,
+				-1px 0 rgba(255,255,255, 0.03) inset,
+				
+				0 -2px rgba(0,0,0, 0.02) inset,
+				0 -3px rgba(0,0,0, 0.01) inset,
+				0 1px 2px 0 rgba(0,0,0,0.2)!important;
+  color: #f6f6f8 !important;
+  text-shadow: rgba(0,0,0,0.45) 0px 1px 0px !important;
+  -moz-transition: background .2s ease-in !important;
+ }
+
+#newtab-search-submit:active,
+#newtab-search-submit:active:hover { 
+  -moz-appearance: none !important;
+  background: -moz-lineaer-gradient(to bottom, #2a2a2c, #3a3a3c);
+      text-shadow: 0 -1px rgba(0, 0, 0, 0.62353);
+      icon-shadow: 0 -1px rgba(0, 0, 0, 0.62353)!important; 
+  border: 1px solid #191919 !important;				
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.07), inset 0 2px 1px -2px rgba(0, 0, 0, 0.6), 0 1px rgba(255,255,255,0.12)!important;
+  color: #fff !important; 
+  text-shadow: rgba(0,0,0,0.6) 0px 1px 2px !important;
+  -moz-transition: background .2s ease-in !important;
+ }
+ 
+
+
