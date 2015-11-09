@@ -7413,11 +7413,29 @@ NemoDesktopWindow.background:backdrop {
 	background-color: transparent;
 }
 
+/* Nautilus List View Fix */
+  NautilusListView GtkTreeView.view:selected,
+  NautilusListView .view:selected,
+  NautilusListView .view:active,
+  NautilusListView .view:checked {
+    color: #8b8b8c;}
+
+NautilusListView GtkTreeView.view,    
+NautilusListView .view  {
+   background-image:none;
+   background-color: @theme_base_color;
+}
+
+NautilusListView GtkTreeView.view:backdrop,    
+NautilusListView .view:backdrop {
+    background-color: shade(@theme_base_color, 1.2);
+    }
+
 /* Easy Tag */
 EtBrowser > GtkGrid > GtkPaned > GtkScrolledWindow > GtkTreeView.view row:nth-child(even) {
  color: black;
  }
-EtBrowser > GtkGrid > GtkPaned > GtkScrolledWindow > GtkTreeView.view row:nth-child(even):selected {
+EtBrowser > GtkGrid > GtkPaned > GtkScrolledWindow > GtkTreeView.view row:selected {
  color: #8B8B8C;
  } 
 
@@ -7487,11 +7505,66 @@ DConfWindow DConfKeyView.view row:hover:backdrop {
     color: #cdcdcf;
 }
 
+/* Terminal */    
+TerminalWindow .notebook tab.reorderable-page,
+TerminalWindow .notebook tab.reorderable-page:hover {
+  padding-top: 3px;
+  padding-bottom: 3px; }
+
+/* gedit */
+GeditFileBrowserWidget,
+GeditFileBrowserView.view,
+GeditFileBrowserWidget:backdrop,
+GeditFileBrowserView.view:backdrop {
+  background-color: @theme_bg_color; }
+  
+GeditFileBrowserWidget:selected,
+GeditFileBrowserView.view:selected {
+  box-shadow: inset 0 -1px alpha(white, 0.06), inset 0 1px alpha(black,0.8);
+}
+
+GeditViewFrame .gedit-search-slider,
+GeditViewFrame .gedit-search-slider:backdrop {
+  padding: 6px;
+  background-color: @theme_bg_color;
+  border-color: #0f0f10;
+  border-radius: 0 0 3px 3px;
+  border-width: 0 1px 1px 1px;
+  border-style: solid; 
+} 
+
+/*  For the sake of Sushi this change to headerbar labels */
+.titlebar.header-bar > GtkBox > GtkLabel.label.title {
+  color: white;
+  text-shadow: 0 -1px rgba(0,0,0,0.7);
+  icon-shadow: 0 -1px rgba(0,0,0,0.7);
+}
+
+SushiFontWidget {
+    padding: 6px 12px;
+}
+
+/* Gnome-Music */
+GdMainListView.view:selected {
+  color: black;
+}
+
+/* Eye of Gnome */
+EogSidebar {
+  background-image: none;
+  background-color: @theme_bg_color;
+  }
+
 /* Boxes */
 .content-bg /* DOESN'T WORK!!! */{
 background-color: @theme_base_color;
 background-image: none;
 color: @theme_fg_color;}
+
+/* Gnome-Photos */
+PhotosViewContainer GdMainIconView.view.content-view,
+PhotosPreviewView GeglGtkView.view.content-view {
+  background-color: #080809;}
 
 /***********************************************************************
  *              MATE GTK3                                              *
@@ -8130,7 +8203,7 @@ WnckSelector.menubar .menuitem {
 
 /* set selected button WnckSelector */
 WnckSelector.menubar .menuitem:hover {
-    color: shade(@theme_fg_color);
+    color: shade(@theme_fg_color,1.2);
     border-color: #191919;
     border-bottom-color: #212123;
     background-image: linear-gradient(to bottom, 
@@ -8165,7 +8238,7 @@ WnckSelector.menubar .menu .menuitem:hover {
 
 WnckPager {
     background-image: none;
-    border-color: none;
+    border-color: transparent;
     background-color: #323234;
     text-shadow: none;
 }
@@ -8409,7 +8482,7 @@ ShellWindow GtkScrolledWindow .button.flat:hover {
 
 /* mate-appearance-properties view */
 GtkDialog GtkScrolledWindow .view {
-    background-color: shade(@theme_base_color, 1.06)
+    background-color: shade(@theme_base_color, 1.12)
 }
 
 /* atril and eom */
@@ -8463,12 +8536,7 @@ EomThumbNav .button.flat:insensitive {
     border-color: transparent;
 }
 
-/* Nautilus List View Fix */
-  NautilusListView GtkTreeView.view:selected,
-  NautilusListView .view:selected,
-  NautilusListView .view:active,
-  NautilusListView .view:checked {
-    color: #8b8b8c;}
+
 
 /* GTK NAMED COLORS
    ----------------
