@@ -843,6 +843,14 @@ style "scrollbar"  =  "gtk_color"
 }
 }
 
+# Overlay Scrollbars###################################################
+style "overlay-scrollbar"
+{
+	bg[SELECTED] = "#7a7e7f"
+	bg[INSENSITIVE] = "#2c2c2e"
+	bg[ACTIVE] = "#acacaf"
+}
+
 # Scrollbar Notebook###################################################
 style "notebook-scrollbar"  =  "gtk_color"
 {
@@ -900,7 +908,7 @@ style "menubar"  =  "default"
 		recolorable	= TRUE
 		state		= PRELIGHT
 		file		= "/images/buttons/menubar-pressed.svg"
-		border		= { 30, 35 , 30 , 20}
+		border		= { 5, 5 , 4 , 3}
 		stretch		= TRUE
 	}
 	}
@@ -1183,7 +1191,7 @@ style "menubar_item"  =  "gtk_color"
       function			= BOX
       recolorable		= TRUE
       file		= "/images/buttons/menubar-pressed.svg"
-		border		= { 30, 35 , 20 , 20}
+		border		= { 5, 5 , 4 , 3}
       stretch			= TRUE
     }
 	}
@@ -3490,8 +3498,16 @@ style "xchat_text"
 # Xfdesktop Icons######################################################
 style "xfdesktop-icon-view" {
   XfdesktopIconView::label-alpha = 0
-  XfdesktopIconView::selected-label-alpha = 100
+  XfdesktopIconView::selected-label-alpha = 85
   XfdesktopIconVIew::ellipsize-icon-labels = 1
+  XfdesktopIconView::cell-spacing = 2
+	XfdesktopIconView::cell-padding = 6
+	XfdesktopIconView::cell-text-width-proportion = 1.9
+	XfdesktopIconView::selected-shadow-x-offset = 0
+	XfdesktopIconView::selected-shadow-y-offset = 1
+	XfdesktopIconView::shadow-color = shade(1.5, @tooltip_bg_color)
+	XfdesktopIconView::selected-shadow-color = shade(1.8, @tooltip_bg_color)
+    XfdesktopIconView::shadow-blur-radius = 2
 
   base[NORMAL] = @selected_bg_color
   base[SELECTED] = @selected_bg_color
@@ -3538,6 +3554,283 @@ style "xfwm-tabwin-button" {
   bg[SELECTED] = @selected_bg_color
 }
 
+# Xfsm#################################################################
+style "xfsm-logout"
+{
+	GtkDialog::content-area-border = 12
+	GtkDialog::content-area-spacing = 6
+	GtkDialog::action-area-spacing = 0
+
+	bg[NORMAL]      = @bg_color
+	bg[SELECTED]	= shade (1.18, @bg_color) # Border around the dialog
+	fg[NORMAL]      = @fg_color
+
+	engine "pixmap"
+{
+	image
+	{
+		function = FLAT_BOX
+		recolorable     = TRUE
+		file		= "images/other/xfsm-logout.svg"
+		border		= { 4 , 4 , 4 , 2 }
+		stretch		= TRUE
+	}
+
+}
+}
+
+style "xfsm-label"
+{
+	font_name = "14"
+
+	engine "murrine"
+	{
+		textstyle = 1
+		text_shade = 0.85
+	}
+}
+
+style "xfsm-button" = "button"
+{
+	
+}
+
+# Terminal#############################################################
+style "terminal"
+{
+	bg[NORMAL]	= @bg_color
+	bg[ACTIVE]	= @bg_color
+	bg[PRELIGHT]	= @bg_color
+	bg[SELECTED]	= @bg_color
+	base[NORMAL]	= @bg_color
+}
+
+style "terminal-notebook" 
+{
+	bg[NORMAL]	= @bg_color # Tab background.
+	bg[ACTIVE]	= shade (0.92, @bg_color) # Unfocused tab background.
+	fg[ACTIVE]	= shade (0.82, @bg_color)
+	base[NORMAL]	= @fg_color
+	engine "murrine"
+	{
+		highlight_shade     = 1.0
+		roundness       = 3
+		contrast        = 0.6
+	}
+}
+
+# Xfce-Panel###########################################################
+style "theme-panel" 
+{
+    WnckTasklist	:: fade-overlay-rect		= 1
+	WnckTasklist	:: fade-opacity			= 1.0
+	WnckTasklist	:: fade-loop-time		= 6.0
+
+	GtkArrow	:: arrow-scaling		= 0.4
+	
+	xthickness = 0
+	ythickness = 0
+	bg[NORMAL]					= @bg_color
+	bg_pixmap[NORMAL] 			= "images/other/panel.svg"
+	engine "pixmap"
+{
+	image
+	{
+		function = BOX
+		recolorable     = TRUE
+		file		= "images/other/panel.svg"
+		border		= { 1 , 1 , 2 , 2 }
+		stretch		= TRUE
+	}
+
+}
+}
+
+style "theme-panel-text"
+{
+	fg[NORMAL]	= @base_color
+	fg[PRELIGHT]	= "#ffffff"
+	fg[ACTIVE]	= @base_color
+
+	text[NORMAL]	= @base_color
+	text[PRELIGHT]	= "#ffffff"
+	text[ACTIVE]	= @base_color
+
+	engine "murrine" {
+		textstyle	= 1
+		text_shade	= 0.2
+	}
+}
+
+style "panel-entry" = "entry"
+{
+}
+
+style "theme-main-menu-text" = "theme-panel-text"
+{
+	fg[PRELIGHT]	= "#ffffff"
+	text[PRELIGHT]	= "#ffffff"
+}
+
+style "workspace-switcher" = "theme-panel"
+{
+	bg[SELECTED]	= "#000"
+	bg[NORMAL]			= shade(0.6, @bg_color)
+}
+
+style "indicator" = "theme-panel"
+{
+	xthickness	= 0
+	ythickness	= 0
+}
+
+style "panel-buttons"
+{
+	xthickness            			= 4
+	ythickness            			= 4
+	GtkWidget::focus_padding 		= 2
+	
+	fg[NORMAL]			= "#cdcdcf"
+	fg[PRELIGHT]		= @selected_fg_color
+	fg[SELECTED]		= @selected_fg_color
+	fg[INSENSITIVE]		= "#5a5a5d"
+	fg[ACTIVE]			= "#fff"
+
+	engine "pixmap"
+	 { 
+	image
+	{
+		function        		= BOX
+		recolorable     		= TRUE
+		state					= NORMAL
+		file            		= "images/buttons/panel/panel-normal.svg"
+		border          		= { 4, 4, 5,5 }
+		stretch         		= TRUE
+	}	
+	image
+	{
+		function        		= BOX
+		shadow					= OUT
+		recolorable     		= TRUE
+		state					= PRELIGHT
+		file            		= "images/buttons/panel/panel-hover.svg"
+		border          		= { 4, 4, 5,5 }
+		stretch         		= TRUE
+	}	
+    image
+	{
+		function        		= BOX
+		recolorable     		= TRUE
+		shadow					= IN
+		state					= PRELIGHT
+		file            		= "images/buttons/panel/panel-active.svg"
+		border          		= { 4, 4, 5,5 }
+		stretch         		= TRUE
+	}	
+	image
+	{
+		function        		= BOX
+		recolorable     		= TRUE
+		state					= ACTIVE
+		file            		= "images/buttons/panel/panel-active.svg"
+		border          		= { 4, 4, 5,5 }
+		stretch         		= TRUE
+	}  
+	image
+	{
+		function        		= BOX
+		recolorable     		= TRUE
+		state					= INSENSITIVE
+		file            		= "images/buttons/panel/panel-normal.svg"
+		border          		= { 4, 4, 5,5 }
+		stretch         		= TRUE
+	} 
+	image
+	{
+		function        		= BOX
+		recolorable     		= TRUE
+		state					= SELECTED
+		file            		= "images/buttons/panel/panel-active.svg"
+		border          		= { 4, 4, 5,5 }
+		stretch         		= TRUE
+	}  
+ }
+}
+
+style "panel-toggle-buttons" = "theme-panel"
+{
+	GtkWidget::focus_padding = 0
+	
+	xthickness            			= 4
+	ythickness            			= 1
+
+	bg[NORMAL]	= shade (1.1, "#0a0a0a")
+	bg[ACTIVE]	= shade (0.9, "#0a0a0a")
+	bg[PRELIGHT]	= shade (1.3, "#0a0a0a")
+	bg[SELECTED]	= shade (0.78, "#0a0a0a")
+
+	engine "pixmap" 
+   {
+	image
+	{
+		function        		= BOX
+		recolorable     		= TRUE
+		state					= NORMAL
+		file            		= "images/buttons/menubar-normal.svg"
+		border          		= { 0,0,0,0 }
+		stretch         		= TRUE
+	}
+	image
+	{
+		function				= BOX
+		recolorable				= TRUE
+		shadow					= OUT
+		state					= PRELIGHT
+		file					= "images/buttons/menubar-normal.svg"
+		border					= { 0,0,0,0}
+		stretch					= TRUE
+	}
+	image
+	{
+		function        		= BOX
+		recolorable     		= TRUE
+		shadow					= IN
+		state					= PRELIGHT
+		file            		= "images/buttons/menubar-pressed.svg"
+		border          		= { 5, 5 , 4 , 3}
+		stretch         		= TRUE
+	}
+	image
+	{
+		function        		= BOX
+		recolorable     		= TRUE
+		state					= ACTIVE
+		file					= "images/buttons/menubar-pressed.svg"
+		border					= { 5, 5 , 4 , 3}
+		stretch         		= TRUE
+	} 
+	image
+	{
+		function        		= BOX
+		recolorable     		= TRUE
+		state					= INSENSITIVE
+		file					= "images/buttons/menubar-normal.svg"
+		border					= { 0,0,0,0 }
+		stretch         		= TRUE
+	}
+	image
+	{
+		function        		= BOX
+		recolorable     		= TRUE
+		state					= SELECTED
+		file					= "images/buttons/menubar-pressed.svg"
+		border					= { 5, 5 , 4 , 3}
+		stretch         		= TRUE
+	}  
+  }
+}
+
+
 # Null Style###########################################################
 style "null"
 {
@@ -3568,6 +3861,22 @@ engine "pixmap"
 	}
 
 }
+}
+
+# GmusicBrowser########################################################
+style "traytip-bg"
+{
+	bg[NORMAL]	= @base_color
+	engine "murrine"
+	{
+		textstyle = 1
+		text_shade = 0.75
+	}
+}
+
+style "gmusicbrowser-handle"
+{
+	GtkPaned::handle-size	= 1
 }
 
 #######################################################################
@@ -3623,6 +3932,12 @@ widget_class "*GtkIconView"						style "iconview"
 
 # Normal and Notebook Treeview Headers #
 widget_class "*<GtkTreeView>*<GtkButton>*"      style "treeview_header"
+widget_class "*.<GtkCTree>.<GtkButton>"	style "treeview_header"
+widget_class "*.<GtkList>.<GtkButton>"		style "treeview_header"
+widget_class "*.<GtkCList>.<GtkButton>"	style "treeview_header"
+widget_class "*.<GtkCMCTree>.<GtkButton>"	style "treeview_header" # Claws-Mail treeview-headers
+widget_class "*.<GtkCMCList>.<GtkButton>"	style "treeview_header" # Claws-Mail treeview-headers
+widget_class "*GnmSimpleCanvas*"		style "treeview_header" # Gnumeric treeview-headers
 widget_class "*<GtkNotebook>*<GtkTreeView>*<GtkButton>*"      style "notebook-treeview_header"
 widget_class "*<GtkTreeView>*<GtkButton>*"					  style "notebook-treeview_header"
 ###
@@ -3646,6 +3961,7 @@ widget "*<GtkNotebook>*<GtkViewport>"  style:highest "notebook_viewport"
 widget "*<GtkNotebook>*<GtkEventBox>"  style "notebook_viewport"
 ###
 
+widget_class "*<GtkNotebook>.<GtkScrolledWindow>.<GtkViewport>*"	style "notebook" # Claws-Mail compose-window workaround
 widget_class "*<GtkNotebook>*"	style "notebook-close"
 # Entries in notebooks draw with notebook's base color, but not if there's
 # something else in the middle that draws gray again
@@ -3700,6 +4016,9 @@ widget_class "*<GimpScaleComboBox>*<GtkButton>"          style:highest  "combobo
 # Disable gradients completely for GimpSpinScale
 class "GimpSpinScale"                   style:highest "gimp_spin_scale"
 
+widget "Shimmer Desktop.VBMain.HPMain"	style "gmusicbrowser-handle"
+widget "Shimmer Traytip"  style "traytip-bg"
+
 # Chrome/Chromium
 class "ChromeGtkFrame" 			             style "chrome-gtk-frame"
 widget_class "*Chrom*Button*"		             style "button"
@@ -3732,6 +4051,63 @@ widget "*ExoIconView*"  style:highest "background-fill"
 widget_class "*XfdesktopIconView*"                                  style "xfdesktop-icon-view"
 widget "xfwm4-tabwin*"                                              style "xfwm-tabwin"
 widget "xfwm4-tabwin*GtkButton*"                                    style "xfwm-tabwin-button"
+widget_class "*XfsmLogoutDialog*"	style "xfsm-logout"
+widget_class "*XfsmLogoutDialog*GtkVBox.GtkVBox.GtkLabel"	style "xfsm-label"
+widget_class "*XfsmLogoutDialog*GtkButton*"	style "xfsm-button"
+class "*TerminalWindow"				style "terminal"
+widget_class "TerminalWindow*GtkNotebook"			style "terminal-notebook"
+
+widget "*PanelWidget*"			style "theme-panel"
+widget "*PanelApplet*"			style "theme-panel"
+widget "*fast-user-switch*"		style "theme-panel"
+widget "*CPUFreq*Applet*"		style "theme-panel"
+widget "*TopMenu*"		style "theme-panel"
+class "PanelApp*"			style "theme-panel"
+class "PanelToplevel*"			style "theme-panel"
+widget_class "*PanelToplevel*"		style "theme-panel"
+widget_class "*notif*"			style "theme-panel"
+widget_class "*Notif*"			style "theme-panel"
+widget_class "*Tray*"			style "theme-panel"
+widget_class "*tray*"			style "theme-panel"
+widget_class "*computertemp*"		style "theme-panel"
+widget_class "*Applet*Tomboy*"		style "theme-panel"
+widget_class "*Applet*Netstatus*"	style "theme-panel"
+widget		"*Xfce*Panel*Tasklist*"							style:rc		"theme-panel"
+
+class "*SexyIconEntry*"			style:highest "combobox"	# fixes dict-plugin
+widget "*xfce4-verve-plugin*GtkEntry"	style:highest "combobox"	# fixes verve-plugin
+widget "*bookmark*GtkEntry" style "panel-entry" # fixes smartbookmark-plugin
+
+# Make sure panel text color doesn't change
+widget_class "*Panel*MenuBar*"		style "theme-main-menu-text"
+widget_class "*Panel*<GtkMenuBar>*"	style "theme-main-menu-text"
+widget "*.clock-applet-button.*"	style "theme-panel-text"
+widget "*PanelApplet*"			style "theme-panel-text"
+
+# Override general panel-style with specific plugin-styles
+widget "*indicator-applet*"		style "indicator"
+widget "*indicator-button*"		style "indicator"
+widget "*XfceTasklist*"			style:highest "panel-buttons"
+widget_class "*<XfceArrowButton>" 	style "panel-toggle-buttons"
+widget_class "*<XfceActionsPlugin>*"  style:highest "panel-toggle-buttons"
+widget_class "*XfcePanelPlugin.GtkButton"  style "panel-toggle-buttons"
+widget_class "*XfceVolumeButton*"  style "panel-toggle-buttons"
+widget 	"*dict*Applet*"	style "panel-toggle-buttons"
+widget_class "*Panel*GtkToggleButton" 		style:highest "panel-toggle-buttons"
+widget_class "*Xfce*NetkTasklist*GtkToggleButton" style "panel-toggle-buttons"
+widget_class "*PanelToplevel*GtkToggleButton"   style "button"
+
+# Fixes for tooltip text in some apps.
+widget_class "*Notif*Beagle*"		style "theme-panel"
+widget_class "*Notif*Brasero*"		style "theme-panel"
+
+# XFCE panel theming.
+widget "*Xfce*Panel*"			style "theme-panel"
+class "*Xfce*Panel*"			style "theme-panel"
+widget "*WnckPager*"			style "workspace-switcher"
+
+widget_class "*<OsScrollbar>"		style "overlay-scrollbar"
+widget_class "*<OsThumb>"		style "overlay-scrollbar"
 
 #include "panelrc"
 include "filemanagersrc"

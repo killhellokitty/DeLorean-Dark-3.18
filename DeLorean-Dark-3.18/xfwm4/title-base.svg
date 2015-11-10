@@ -16,14 +16,14 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="title-3-ins.svg">
+   sodipodi:docname="title-base.svg">
   <defs
      id="defs4">
     <linearGradient
        inkscape:collect="always"
        id="linearGradient4329">
       <stop
-         style="stop-color:#ffffff;stop-opacity:0.04"
+         style="stop-color:#ffffff;stop-opacity:0.08"
          offset="0"
          id="stop4331" />
       <stop
@@ -59,9 +59,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="13.12"
-     inkscape:cx="-27.274345"
-     inkscape:cy="14.711235"
+     inkscape:zoom="22.84"
+     inkscape:cx="1.6312728"
+     inkscape:cy="14.776108"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -88,8 +88,16 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-1023.3622)">
+    <image
+       y="1023.6766"
+       x="-37.537655"
+       id="image3414"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAdCAYAAACXFC2jAAAABmJLR0QASQBJAE3bhgolAAAACXBI WXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH3wsGCR8EuOGbnwAAAPtJREFUKM99kktuwzAQQx/Hc5Cg t8miZyxysKLoQSJmIckaOUC0MQQPOfxIt9uX+XD0+HnYrBkhKkL3+/dHhvz/++XjQCiwjSQQcOFL qW+e+xHYLgMEfQgU2tDGZHVAA2JfkyH1FRWsNZPP1gZEXehF52IAUIeqMGVzTdH4atM2U6hcshjf 5cKwHPkUkkfE3t7QQYDdXS9Fg71NLTaJtNbqkpJEbliDT5MaDINyDqmsQ3rX0GM2qCeWVGsn/QzM PajTtrxpNCbfsi21CpGKUZC01z1zaM+lQdqZLMjjiJ3Z6+reZhs/VMSVulurkPJaRvUZUV7TzNPd shS8AA1PdyxuFFvZAAAAAElFTkSuQmCC "
+       preserveAspectRatio="none"
+       height="29"
+       width="8" />
     <g
-       id="g4148"
+       id="g4145"
        transform="scale(3,1)">
       <image
          clip-path="url(#clipPath4300)"
@@ -113,7 +121,7 @@
          height="1"
          width="8"
          id="rect4304-0"
-         style="fill:#ffffff;fill-opacity:0.4;stroke:none" />
+         style="fill:#ffffff;fill-opacity:0.55;stroke:none" />
       <rect
          inkscape:transform-center-y="-1.882662"
          inkscape:transform-center-x="-0.56917689"
@@ -122,7 +130,7 @@
          height="1"
          width="8"
          id="rect4304-3"
-         style="fill:#4c4c4e;fill-opacity:1;stroke:none" />
+         style="fill:#4d4d4f;fill-opacity:1;stroke:none" />
       <rect
          y="1026.3622"
          x="0"
@@ -131,12 +139,5 @@
          id="rect4327"
          style="fill:url(#linearGradient4335);fill-opacity:1;stroke:none" />
     </g>
-    <ellipse
-       style="fill:#ffffff;fill-opacity:1;stroke:none"
-       id="path4437-6"
-       cx="-51.67683"
-       cy="1031.1732"
-       rx="12.881098"
-       ry="18.711889" />
   </g>
 </svg>
