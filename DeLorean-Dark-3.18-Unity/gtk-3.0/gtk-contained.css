@@ -2119,7 +2119,7 @@ GtkComboBox {
   border-bottom-color: #1c1c1e;
   background-color: transparent;
   background-image:  url("assets/background-dark.png");
-  box-shadow: 0 1px #424244, 0 -1px #424244;
+  box-shadow: 0 1px #424244, 0 -1px #1c1c1e;
   text-shadow: 0 1px alpha(black,0.35); }
 
 .ssd .titlebar {
@@ -2138,7 +2138,7 @@ GtkComboBox {
     
     background-color: transparent;
     background-image: url("assets/background-dark.png");
-    box-shadow: 0 1px #1c1c1e; }
+    box-shadow: 0 1px #202022; }
 
 .ssd .titlebar:backdrop {
    color: @theme_unfocused_fg_color;
@@ -5194,6 +5194,27 @@ GtkScrolledWindow GtkViewport.frame {
     background-color: @theme_bg_color;
     background-image: none;
     border-color: #121214; }
+
+/*for backward compat*/
+.list-row.button {
+    background-image: none;
+    background-color: #121214;
+    border-style: none;
+    box-shadow: none;
+    }
+
+.list-row.button:hover,
+.list-row:hover {
+    background-image: none;
+    background-color: rgba(15,15,16,0.35);
+}
+
+.list-row:selected {
+    background-image: none;
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+/*******************/
 
 .list-row,
 .grid-child {
@@ -8577,6 +8598,23 @@ GtkWindow > GtkVBox > .dock > GtkHBox > GtkToolbar {
 }
 
 /******************
+ * Misc.          *
+ *****************/
+.dnd {
+    border-width: 1px;
+    border-style: solid;
+    border-color: shade(@theme_selected_bg_color, 0.9);
+}
+
+.grip {
+    background-color: transparent;
+}
+
+.arrow {
+    color: alpha(currentColor, 0.7);
+}
+ 
+/******************
  * Ubuntu Menus   *
  *****************/
 /* Hover-effect on play-button in ubuntu soundmenu */
@@ -8668,6 +8706,64 @@ OsScrollbar:insensitive {
 .tooltip * {
     background-color: transparent;
     color: inherit;
+}
+
+/**************
+ * action-bar *
+ **************/
+.action-bar {
+    padding: 4px;
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: shade(@theme_bg_color, 0.8);
+    background-color: @theme_bg_color;
+    background-image: none;
+    color: @theme_fg_color;
+}
+
+.action-bar .button.text-button {
+    padding: 4px;
+}
+
+.action-bar .button.image-button {
+    padding: 6px;
+}
+
+.action-bar .title {
+    font: bold;
+    padding: 0 12px;
+}
+
+.action-bar .subtitle {
+    font: smaller;
+    padding: 0 12px;
+}
+
+/*************************
+ * touch text selections *
+ *************************/
+GtkBubbleWindow {
+    border-radius: 2px;
+    background-clip: border-box;
+}
+
+GtkBubbleWindow.osd.background {
+    background-color: rgba(18,18,1a,0.85);
+}
+
+GtkBubbleWindow .toolbar {
+    background-color: transparent;
+}
+
+/****************
+ * drawing area *
+ ****************/
+GtkDrawingArea {
+    background-color: transparent;
+}
+
+GtkDrawingArea:insensitive {
+    background-color: shade(@theme_base_color, 0.9);
 }
 
 /******************
