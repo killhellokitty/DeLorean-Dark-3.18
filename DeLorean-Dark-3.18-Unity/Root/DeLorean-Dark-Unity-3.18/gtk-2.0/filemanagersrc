@@ -1,0 +1,264 @@
+### FileMangers for Thunar, PCmanfm, Caja, and FileChooser##
+
+
+style "sidebar" 
+{
+	xthickness = 0	#For Thunar
+	ythickness = 0  #For Thunar
+
+	GtkWidget	:: focus-padding = 0 #Takes away space between Trash and Bookmarks
+	GtkWidget	:: focus_line_width = 1 #Adds spacing between icons and text
+	GtkTreeView	:: horizontal_separator	= 12 #Padding to the left
+	GtkTreeView	:: vertical_separator = 2 #Padding between each place
+	GtkTreeView	:: image-spacing = 6
+	
+	GtkTreeView	:: even-row-color = "#161618" #This is the color for the sidebar
+		
+	base[NORMAL]		=  "#161618"
+
+	engine "pixmap"
+	{
+	image
+    {
+      function			= FLAT_BOX
+      recolorable		= TRUE
+      state 			= SELECTED
+      file				= "/images/other/tree-selected.svg"
+      border			= {1,1,3,3}
+      stretch			= TRUE
+    }
+}
+		
+}
+
+class		 "*ThunarTreeView"			style		"sidebar"
+widget_class	"*FmPlacesView*"		style 		"sidebar"
+widget_class	"*FmDirTreeView"			style 		"sidebar"
+widget_class "*<ThunarShortcutsPane>*<ThunarShortcutsView>"  style  "sidebar"
+widget_class "*CajaSidePane.*"                 style "sidebar"
+widget_class "*Caja*Places*Sidebar*"           style "sidebar"
+widget_class "*Caja*Side*.GtkWidget"           style "sidebar"
+widget_class "*Caja*Side*Title*"               style "sidebar"
+
+style "small-scrollbar" = "scrollbar"
+{
+
+	GtkRange	:: slider_width			= 9
+	GtkScrollbar::slider-width			        = 12
+	GtkScrollbar	:: fixed-slider-length		= 1
+	GtkScrollbar	:: min-slider-length		= 50
+
+	GtkScrollbar	:: has-backward-stepper		= 0
+	GtkScrollbar	:: has-forward-stepper		= 0
+
+  engine "pixmap"
+{
+
+	image
+	{
+		function	= BOX
+		recolorable	= TRUE
+		detail		= "trough"
+		file		= "/images/scroll/trough-h-small.svg"
+		border		= { 7 , 7 , 3 , 3 }
+		stretch		= TRUE
+		orientation	= HORIZONTAL
+	}
+
+	image
+	{
+		function	= BOX
+		recolorable	= TRUE
+		detail		= "trough"
+		file		= "/images/scroll/trough-v-small.svg"
+		border		= { 3 , 3 , 7 , 7 }
+		stretch		= TRUE
+		orientation	= VERTICAL
+	}
+  }
+}  
+  
+widget		"*Thunar*Tree*Scrollbar"						style		"small-scrollbar"
+widget		"*Thunar*Shortcuts*Scrollbar"						style		"small-scrollbar"
+widget		"*FmPlacesView*Scrollbar"						style		"small-scrollbar"
+widget		"*FmSidePane*GtkScrolledWindow*Scrollbar"						style		"small-scrollbar"
+widget		"*CajaSidePane*Scrollbar"			style "small-scrollbar"
+
+style "caja-icon-view"
+{
+	xthickness 					= 0
+	ythickness 					= 1
+}
+
+widget_class "*FMIconView"				style "caja-icon-view"
+widget_class "*FMListView"				style "caja-icon-view"
+widget_class "*Caja*View*"                     style "caja-icon-view"
+
+style "thunar-fm-iconview" 
+{
+	text[NORMAL] = @text_color
+	fg[NORMAL] = @text_color
+	base[NORMAL] = "#1e1e1e"
+}
+
+widget	"*Thunar*ExoIconView*"				style:highest	"thunar-fm-iconview"
+widget	"*FmStandardView*View"				style:highest	"thunar-fm-iconview"
+#widget	"*Caja*FMIconView*"				style:highest	"thunar-fm-iconview"
+# Notebook#############################################################
+style "file-manager-notebook"  
+{
+bg[NORMAL] = "#1e1e1e"
+base[NORMAL] = "#1e1e1e"
+
+  xthickness	= 5
+  ythickness	= 2
+
+  engine "pixmap" 
+  {
+    image 
+    {
+        function		= EXTENSION
+	state			= ACTIVE
+	file			= "images/tabs/tab-bottom.svg"
+	border			= { 3,3,3,7 }
+	stretch			= TRUE
+	gap_side		= TOP
+    }
+    image 
+    {
+        function		= EXTENSION
+	state			= ACTIVE
+	file			= "images/tabs/tab-top.svg"
+	border			= { 3,3,7,3 }
+	stretch			= TRUE
+	gap_side		= BOTTOM
+    }
+    image 
+    {
+        function		= EXTENSION
+	state			= ACTIVE
+	file			= "images/tabs/tab-left.svg"
+	border			= { 7,3,3,3 }
+	stretch			= TRUE
+	gap_side		= RIGHT
+    }
+    image 
+    {
+        function		= EXTENSION
+	state			= ACTIVE
+	file			= "images/tabs/tab-right.svg"
+	border			= { 3,7,3,3 }
+	stretch			= TRUE
+	gap_side		= LEFT
+    }	
+    image 
+    {
+        function		= EXTENSION
+	file			= "images/tabs/fm-tab-top-active.svg"
+	border			= { 3,3,6,3 }
+	stretch			= TRUE
+	gap_side		= BOTTOM
+    }
+    image 
+    {
+        function		= EXTENSION
+	file			= "images/tabs/fm-tab-bottom-active.svg"
+	border			= { 3,3,3,6 }
+	stretch			= TRUE
+	gap_side		= TOP
+    }
+    image 
+    {
+        function		= EXTENSION
+	file			= "images/tabs/fm-tab-left-active.svg"
+	border			= {  6,3,3,3 }
+	stretch			= TRUE
+	gap_side		= RIGHT
+    }
+    image
+    {
+        function		= EXTENSION
+	file			= "images/tabs/fm-tab-right-active.svg"
+	border			= {  3,6,3,3 }
+	stretch			= TRUE
+	gap_side		= LEFT
+    }
+  }
+}
+widget_class "ThunarWindow*<GtkNotebook>*"		style:highest "file-manager-notebook"
+widget_class "FmMainWin*<GtkNotebook>*"			style:highest "file-manager-notebook"
+
+style "thunar-location-buttons"
+{
+  ThunarLocationButtons::spacing = 0
+}
+
+class "ThunarLocationButtons" style "thunar-location-buttons"
+
+style "thunar_pathbar_style"
+{
+  xthickness	= 3
+  ythickness	= 4
+}
+
+widget_class	"*ThunarLocationButton*Button*"				style:highest	"thunar_pathbar_style"
+widget_class "*CajaPathBar.*ToggleButton*" 			style:highest "thunar_pathbar_style"
+
+style "pcmanfm-handle"
+{
+	GtkPaned::handle-size = 1
+}
+
+style "sidebar-handle"
+{
+	GtkPaned::handle-size = 3
+}
+
+widget		"*FmMainWin*FmTabPage*"		style "pcmanfm-handle"
+widget		"*Thunar*GtkHPaned*"		style "sidebar-handle"
+widget	    "*CajaNavigationWindow*GtkHPaned*"		style "sidebar-handle"
+
+style "caja-handle" {
+	GtkPaned::handle-size = 2
+	
+	engine "pixmap" {
+		# for the thin gray line separating the sidepane and viewpane
+		image {
+			function	= HANDLE
+			recolorable	= TRUE
+			file		= "images/handles/pane-separator-grip-vertical.svg"
+			stretch		= TRUE
+			border		= { 0, 0, 0, 0 }
+		}
+	}
+}
+
+widget "*Caja*Splitter"                        style "caja-handle"
+
+########File Chooser#
+widget		"*FileChooserDefault*.GtkHPaned*"  style "sidebar-handle"
+widget		"*FileChooserDefault.GtkVBox.GtkHPaned.GtkVBox.GtkScrolledWindow.GtkTreeView*"						style		"treeview_header"
+widget		"*FileChooserDefault.GtkVBox.GtkHPaned.GtkVBox.GtkScrolledWindow.GtkTreeView"					style		"sidebar"
+widget		"*FileChooserDefault.*.*.*.*.*.*View*"					style:highest	"treeview"
+widget		"*FileChooser*.*.*.*VBox.GtkS*Scroll*"					style		"small-scrollbar"
+
+style "pluma-frame" {	
+	engine "pixmap" {
+ 		image {
+			function = SHADOW
+		}
+	}
+}
+
+style "pluma-statusbar" {	
+	ythickness = 0
+}
+
+style "pluma-notebook" {
+	xthickness = 0 # Width of tabs and notebook borders.
+	ythickness = 1 # Height of tabs and notebook borders.
+}
+
+widget_class "*Pluma*.<GtkFrame>*"		style "pluma-frame"
+widget_class "*Pluma*.<GtkNotebook>"		style "pluma-notebook"
+widget_class "*Pluma*.<GtkStatusbar>*"		style "pluma-statusbar"
