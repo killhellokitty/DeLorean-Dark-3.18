@@ -3204,9 +3204,10 @@ GtkTreeView.view {
                                      shade(#545457, 0.9),
                                      shade(#545457, 1.2)
                                       );
-      border-width: 1px 0;
+      border-width: 1px;
       border-style: solid;
-      border-color: #3c3c3e; }
+      border-color: #0a0a0a;
+      box-shadow:none; }
 
 column-header .button, column-header .header-bar .button.titlebutton, .header-bar column-header .button.titlebutton,
 column-header .titlebar .button.titlebutton,
@@ -6903,6 +6904,7 @@ header-bar .button.titlebutton.close:hover,
   background-color: transparent;
   border: none;
   box-shadow: none; }
+  
   .overshoot.top:backdrop {
     background-image: -gtk-gradient(radial, center top, 0, center top, 0.5, to(#747479), to(rgba(168, 168, 168, 0)));
     background-size: 100% 5%;
@@ -6919,6 +6921,7 @@ header-bar .button.titlebutton.close:hover,
   background-color: transparent;
   border: none;
   box-shadow: none; }
+  
   .overshoot.bottom:backdrop {
     background-image: -gtk-gradient(radial, center bottom, 0, center bottom, 0.5, to(#747479), to(rgba(168, 168, 168, 0)));
     background-size: 100% 5%;
@@ -7217,6 +7220,9 @@ NemoPlacesTreeView:selected {
 }
 
 NemoWindow .sidebar .view {
+    -GtkWindget-focus-padding: 0;
+    -GtkWidget-focus-line-width: 1;
+    -GtkTreeView-vertical-separator: 0;
 	background-color: @theme_bg_color;
 	color: @theme_fg_color;
 }
@@ -7230,39 +7236,45 @@ NemoWindow .sidebar .frame {
 	border-bottom: none;
 }
 
+NemoWindow > GtkGrid > .pane-separator {
+    background-color: transparent;
+    }
+
+NemoWindow .primary-toolbar.toolbar,
 NemoWindow .toolbar {
-  border-width: 0 0 0px;
-  border-style: none;
-  border-color: #aaaaaa;
-  box-shadow: none;
+  border: 1px solid #1c1c1c;
   }
 
 NemoWindow .toolbar:backdrop {
-  border-width: 0 0 0px;
-  border-style: none;
-  border-color: #969696;
+  border: 1px solid #1c1c1c;
   box-shadow: none;
   }
 
 NemoWindow .sidebar row:selected,
-NemoWindow .sidebar row:selected:hover {
+NemoWindow .sidebar row:selected:hover,
+NemoWindow .sidebar .view:selected,
+NemoWindow .sidebar .view:selected:hover {
 	color: #8B8B8C;
 	background-color: #0f0f10;
 }
 
 NemoWindow .sidebar row:backdrop:selected,
-NemoWindow .sidebar row:backdrop:selected:hover {
+NemoWindow .sidebar row:backdrop:selected:hover,
+NemoWindow .sidebar .view:backdrop:selected,
+NemoWindow .sidebar .view:backdrop:selected:hover {
 	color: #8B8B8C;
 	text-shadow: none; 
 	background-color: #0f0f10;
 }
 
-NemoWindow .sidebar row:hover {
+NemoWindow .sidebar row:hover,
+NemoWindow .sidebar .view:hover {
 	background-color: #0f0f10;
 	color: #bbbbbf;
 }
 
-NemoWindow .sidebar row:selected {
+NemoWindow .sidebar row:selected,
+NemoWindow .sidebar .view:selected {
  box-shadow: inset 0 -1px alpha(white, 0.06), inset 0 1px alpha(black,0.8);
  }
 
@@ -7440,6 +7452,19 @@ NautilusListView .view:backdrop {
     background-color: shade(@theme_base_color, 1.2);
     }
 
+/* Transmission Fix */
+.tr-workarea {
+  border-width: 1px 0;
+  border-style: solid;
+  border-radius: 0;
+  }
+  
+.tr-workarea.frame {
+  border-width: 1px 0;
+  border-radius: 0;
+  }
+
+
 /* Easy Tag */
 EtBrowser > GtkGrid > GtkPaned > GtkScrolledWindow > GtkTreeView.view row:nth-child(even) {
  color: black;
@@ -7451,6 +7476,11 @@ EtBrowser > GtkGrid > GtkPaned > GtkScrolledWindow > GtkTreeView.view row:select
 /*
  * Gthumb
  */
+GthGridView {
+  background-image: none;
+  background-color: #0f0f10;
+  } 
+ 
  GthAutoPaned GtkScrolledWindow GthFolderTree.view {
     background-color: @theme_bg_color;
     color: @theme_fg_color;
@@ -7564,11 +7594,13 @@ EogSidebar {
   background-color: @theme_bg_color;
   }
 
-/* Boxes */
-.content-bg /* DOESN'T WORK!!! */{
-background-color: @theme_base_color;
-background-image: none;
-color: @theme_fg_color;}
+/* Boxes */ /*Doesn't work here, but works in Inspector!? */
+BoxesWizard > GtkBox,
+BoxesWizard > GtkBox > GtkBox {
+  background-image: none;
+  background-color: @theme_base_color;
+  color: @theme_fg_color;
+  }
 
 /* Gnome-Photos */
 PhotosViewContainer GdMainIconView.view.content-view,
