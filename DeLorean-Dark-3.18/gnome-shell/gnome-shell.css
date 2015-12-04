@@ -1471,7 +1471,7 @@ StScrollBar {
 
 /* Eeeky things */
 .legacy-tray {
-  background-color: rgba(8,8,89,0.85);
+  background-color: rgba(8,8,9,0.85);
   border: 1px solid #030305;
   border-bottom-width: 0; }
   .legacy-tray:ltr {
@@ -1490,7 +1490,7 @@ StScrollBar {
   .legacy-tray-handle:hover, .legacy-tray-handle:focus,
   .legacy-tray-icon:hover,
   .legacy-tray-icon:focus {
-    background-color: rgba(238, 238, 240, 0.1); }
+    background-color: rgba(8,8,9,0.85); }
 
 .legacy-tray-icon-box {
   spacing: 12px; }
