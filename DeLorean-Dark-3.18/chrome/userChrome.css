@@ -1217,6 +1217,23 @@ panel[type="arrow"][side="right"] {
   margin: 3px 4px 4px 4px!important;
 }
 
+.panel-subviews {
+  background-color: #4d4d4f!important;
+  border-bottom-right-radius: 3.5px;
+  padding: 0;
+}
+
+#login-fill-details {
+  padding: 4px;
+  background-color: #4d4d4f!important;
+  color: #cdcdcf!important;
+  background-clip: padding-box;
+  border-left: 1px solid hsla(210,4%,10%,.3);
+  box-shadow: 0 3px 5px hsla(210,4%,10%,.1),
+              0 0 7px hsla(210,4%,10%,.1);
+  -moz-margin-start: 38px;
+}
+
 .panel-arrow[side="top"],
 .panel-arrow[side="bottom"] {
   list-style-image: url("images/panelarrow-vertical.png")!important;
