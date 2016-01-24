@@ -2465,6 +2465,17 @@ style "libreoffice_entry"
 }
 
 # Entry Chromium#######################################################
+style "chrome_entry"
+{
+  base[NORMAL] 		= "#767678" #Spotify and other non gtk apps use 
+				    #this as the entry text-area-input#
+  base[INSENSITIVE] = "#cdcdcd"        
+  text[SELECTED]  	= "#fff"
+  text[NORMAL] 		= "#cdcdcd"
+  text[PRELIGHT]	= "#000000"
+  text[INSENSITIVE] = "#757579"
+}
+
 style "standalone_entry" 
 {
 
@@ -4020,6 +4031,7 @@ widget "Shimmer Desktop.VBMain.HPMain"	style "gmusicbrowser-handle"
 widget "Shimmer Traytip"  style "traytip-bg"
 
 # Chrome/Chromium
+widget_class "*Chrom*"		                     style "chrome_entry"
 class "ChromeGtkFrame" 			             style "chrome-gtk-frame"
 widget_class "*Chrom*Button*"		             style "button"
 widget_class "*<GtkCustomMenu>*<GtkCustomMenuItem>*" style "chrome_menu_item"
